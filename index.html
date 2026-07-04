@@ -158,92 +158,7 @@
 </section>
 
 <!-- ── WORKFLOW PREVIEW ── -->
-<section class="section workflow" aria-labelledby="wf-heading">
-  <div class="container">
-    <div class="section-header reveal" style="color:var(--white)">
-      <span class="tag" style="color:var(--accent);background:rgba(6,182,212,0.15)">🔄 Process</span>
-      <h2 id="wf-heading" style="color:var(--white)">The 6-Step Design Pipeline</h2>
-      <p style="color:rgba(255,255,255,.65)">Our validated workflow mirrors clinical practice at leading neurosurgery centers.</p>
-    </div>
-    <div class="workflow-steps">
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__title">CT Acquisition & DICOM Export</div>
-          <div class="workflow-step__desc">128-slice multislice CT at 1.25 mm slice thickness. DICOM series exported from the scanner for reconstruction.</div>
-          <span class="workflow-step__tag">3D Slicer</span>
-        </div>
-        <div class="workflow-step__node">
-          <div class="workflow-step__num">1</div>
-          <div class="workflow-step__label">CT Scan</div>
-        </div>
-        <div class="workflow-step__content workflow-step--empty"></div>
-      </div>
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content workflow-step--empty"></div>
-        <div class="workflow-step__node">
-          <div class="workflow-step__num">2</div>
-          <div class="workflow-step__label">Segment</div>
-        </div>
-        <div class="workflow-step__content">
-          <div class="workflow-step__title">Skull Segmentation & STL</div>
-          <div class="workflow-step__desc">Threshold bone (HU ≥250), clean up noise with island removal, and export a watertight skull mesh as STL.</div>
-          <span class="workflow-step__tag">3D Slicer</span>
-        </div>
-      </div>
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__title">Defect Boundary & Lattice Plate Design</div>
-          <div class="workflow-step__desc">Trace the defect margin in Meshmixer, mirror the healthy contralateral anatomy across the midsagittal plane, then offset the surface to a 3–5 mm plate and convert it into a lattice with fixation holes for the titanium mini-plates.</div>
-          <span class="workflow-step__tag">Meshmixer</span>
-        </div>
-        <div class="workflow-step__node">
-          <div class="workflow-step__num">3</div>
-          <div class="workflow-step__label">Design</div>
-        </div>
-        <div class="workflow-step__content workflow-step--empty"></div>
-      </div>
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content workflow-step--empty"></div>
-        <div class="workflow-step__node">
-          <div class="workflow-step__num">4</div>
-          <div class="workflow-step__label">Mold</div>
-        </div>
-        <div class="workflow-step__content">
-          <div class="workflow-step__title">Negative Mold Generation</div>
-          <div class="workflow-step__desc">Boolean-subtract the finished plate to derive a two-part negative mold, then slice and 3D-print it in PLA (0.2 mm layers, FDM) ready for casting.</div>
-          <span class="workflow-step__tag">Cura + FDM</span>
-        </div>
-      </div>
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__title">Sterilization & PMMA Casting</div>
-          <div class="workflow-step__desc">STERRAD™ low-temperature plasma sterilization of the printed mold. PMMA poured into the sterile cavity, lined with OpSite® drape, and cured to the plate's final shape.</div>
-          <span class="workflow-step__tag">PMMA + Sterile</span>
-        </div>
-        <div class="workflow-step__node">
-          <div class="workflow-step__num">5</div>
-          <div class="workflow-step__label">Cast</div>
-        </div>
-        <div class="workflow-step__content workflow-step--empty"></div>
-      </div>
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content workflow-step--empty"></div>
-        <div class="workflow-step__node">
-          <div class="workflow-step__num">6</div>
-          <div class="workflow-step__label">Implant</div>
-        </div>
-        <div class="workflow-step__content">
-          <div class="workflow-step__title">Surgical Implantation</div>
-          <div class="workflow-step__desc">Cured PMMA plate placed over the defect and fixed through the pre-designed holes with titanium mini-plates. Drainage holes drilled intraoperatively as needed.</div>
-          <span class="workflow-step__tag">Surgery</span>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:3rem">
-      <a href="workflow.html" class="btn btn--primary">Full Workflow Guide →</a>
-    </div>
-  </div>
-</section>
+
 
 <!-- ── FEATURED CASES ── -->
 <section class="section section--alt" aria-labelledby="cases-heading">
@@ -414,48 +329,6 @@
   </div>
 </section>
 
-<!-- ── BLOG PREVIEW ── -->
-<section class="section section--alt" aria-labelledby="blog-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag">✍️ Blog</span>
-      <h2 id="blog-heading">Latest Articles</h2>
-      <p>Deep dives into cranial reconstruction, material science, and open-source medical engineering.</p>
-    </div>
-    <div class="blog-grid">
-      <div class="blog-card reveal">
-        <div class="blog-card__img" style="background:var(--ice);display:flex;align-items:center;justify-content:center;font-size:3rem">🧬</div>
-        <div class="blog-card__body">
-          <div class="blog-card__cat">Material Science</div>
-          <div class="blog-card__title">Why PMMA Remains the Go-To Material for Low-Cost Cranioplasty</div>
-          <div class="blog-card__exc">A deep dive into the biomechanical and clinical properties of PMMA compared to titanium and PEEK implants.</div>
-          <div class="blog-card__meta"><span>Sachin Khaire</span><span>8 min read</span></div>
-        </div>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-card__img" style="background:linear-gradient(135deg,var(--ice),#E0F2FE);display:flex;align-items:center;justify-content:center;font-size:3rem">🖨️</div>
-        <div class="blog-card__body">
-          <div class="blog-card__cat">3D Printing</div>
-          <div class="blog-card__title">FDM vs SLA: Which 3D Printing Technology for Cranial Molds?</div>
-          <div class="blog-card__exc">Comparing fused deposition modeling and stereolithography for surgical mold applications. Cost, resolution, and sterility.</div>
-          <div class="blog-card__meta"><span>Sachin Khaire</span><span>6 min read</span></div>
-        </div>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-card__img" style="background:linear-gradient(135deg,#F0FDF4,var(--ice));display:flex;align-items:center;justify-content:center;font-size:3rem">📊</div>
-        <div class="blog-card__body">
-          <div class="blog-card__cat">Clinical Research</div>
-          <div class="blog-card__title">Complication Rates in 3D-Printed PMMA Cranioplasty: Meta-Analysis</div>
-          <div class="blog-card__exc">Analysis of 35+ published cases showing infection rates consistent with traditional methods at a fraction of the cost.</div>
-          <div class="blog-card__meta"><span>Sachin Khaire</span><span>12 min read</span></div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:2.5rem">
-      <a href="blog.html" class="btn btn--primary">All Articles →</a>
-    </div>
-  </div>
-</section>
 
 <!-- ── CTA STRIP ── -->
 <section style="background:linear-gradient(135deg,var(--cobalt),var(--navy));padding:5rem 0;text-align:center">
