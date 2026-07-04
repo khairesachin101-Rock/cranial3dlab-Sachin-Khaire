@@ -32,70 +32,7 @@
   </div>
 </section>
 
-<!-- WORKFLOW DIAGRAM: 5 MAIN STAGES -->
-<section class="section section--dark workflow" aria-labelledby="wf-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag">🗺️ The Pipeline</span>
-      <h2 style="color:#fff">Five Stages, One Continuous Build</h2>
-      <p style="color:rgba(255,255,255,.6)">Every cranioplasty mold follows the same backbone — only the defect geometry changes.</p>
-    </div>
-    <div class="workflow-steps">
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Stage 01 · Imaging</div>
-          <div class="workflow-step__title">CT Acquisition &amp; DICOM Export</div>
-          <div class="workflow-step__desc">A 128-slice CT scan (≤1.25mm thickness) is taken pre-operatively. Raw DICOM series are exported from the PACS for segmentation.</div>
-          <div class="workflow-step__tag">DICOM</div>
-        </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">1</div></div>
-        <div class="workflow-step__content"></div>
-      </div>
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content"></div>
-        <div class="workflow-step__node"><div class="workflow-step__num">2</div></div>
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Stage 02 · Segmentation</div>
-          <div class="workflow-step__title">Skull Reconstruction in 3D Slicer</div>
-          <div class="workflow-step__desc">DICOM data is thresholded (bone HU ≥ 250) inside 3D Slicer's Segment Editor, isolating the cranium from soft tissue and exporting a clean STL.</div>
-          <div class="workflow-step__tag">3D Slicer® · STL Export</div>
-        </div>
-      </div>
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Stage 03 · Modeling</div>
-          <div class="workflow-step__title">Defect Mirroring &amp; Plate Design</div>
-          <div class="workflow-step__desc">In Meshmixer, the defect boundary is selected using Symmetry, mirrored across the sagittal midline, separated, aligned, patterned, and finished with flanges and screw holes to form the implant plate.</div>
-          <div class="workflow-step__tag">Meshmixer® · Mirror + Boolean</div>
-        </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">3</div></div>
-        <div class="workflow-step__content"></div>
-      </div>
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content"></div>
-        <div class="workflow-step__node"><div class="workflow-step__num">4</div></div>
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Stage 04 · Mold Generation</div>
-          <div class="workflow-step__title">Negative Mold &amp; Slicing</div>
-          <div class="workflow-step__desc">A negative mold replicating the plate's outer surface is generated, split into two pieces, sliced in Cura with 0.2mm layers, and queued for FDM printing in PLA.</div>
-          <div class="workflow-step__tag">Cura® · FDM · PLA</div>
-        </div>
-      </div>
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Stage 05 · Surgical Use</div>
-          <div class="workflow-step__title">Sterilization &amp; Intraoperative Molding</div>
-          <div class="workflow-step__desc">Printed molds are sterilized (STERRAD™ or autoclave), draped, and used intraoperatively to shape PMMA bone cement into the final patient-specific implant.</div>
-          <div class="workflow-step__tag">STERRAD™ · PMMA Casting</div>
-        </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">5</div></div>
-        <div class="workflow-step__content"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MIRROR METHOD TIMELINE: 13 MESHMIXER STEPS -->
+<!-- MIRROR METHOD TIMELINE: 13 MESHMIXER STEPS (stacked layout: text card on top, big image below) -->
 <section class="section section--dark workflow" aria-labelledby="mirror-heading">
   <div class="container">
     <div class="section-header reveal">
@@ -104,161 +41,200 @@
       <p style="color:rgba(255,255,255,.6)">Our full 13-step Meshmixer workflow, from raw skull import to a print-ready, flanged, screw-holed implant.</p>
     </div>
 
-    <div class="workflow-steps">
+    <div class="mirror-steps" style="display:flex;flex-direction:column;gap:2.5rem;margin-top:2rem">
 
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 01</div>
-          <div class="workflow-step__title">Import STL</div>
-          <div class="workflow-step__desc">File → Import → load the segmented skull STL into Meshmixer.</div>
+      <!-- STEP 01 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">1</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 01</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Import STL</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">File → Import → load the segmented skull STL into Meshmixer.</div>
+          </div>
         </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">1</div></div>
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-01-import.png" alt="File Import menu in Meshmixer"></div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-01-import.png" alt="File Import menu in Meshmixer" style="width:100%;height:auto;display:block">
         </div>
       </div>
 
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-02-inspector.png" alt="Inspector repairing skull mesh"></div>
+      <!-- STEP 02 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">2</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 02</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Analysis → Inspector (Repair Skull)</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">Open the Inspector tool from the Analysis panel. It automatically detects and repairs holes, non-manifold edges, and flipped normals — the skull mesh ends up clean and watertight.</div>
+          </div>
         </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">2</div></div>
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 02</div>
-          <div class="workflow-step__title">Analysis → Inspector (Repair Skull)</div>
-          <div class="workflow-step__desc">Open the Inspector tool from the Analysis panel. It automatically detects and repairs holes, non-manifold edges, and flipped normals — the skull mesh ends up clean and watertight.</div>
-        </div>
-      </div>
-
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 03</div>
-          <div class="workflow-step__title">Duplicate Skull &amp; Hide Original</div>
-          <div class="workflow-step__desc">Use Edit → Duplicate to create a copy of the skull. Hide the original skull and work only on the duplicate.</div>
-        </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">3</div></div>
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-03-duplicate-hide.png" alt="Duplicated skull with original hidden"></div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-02-inspector.png" alt="Inspector repairing skull mesh" style="width:100%;height:auto;display:block">
         </div>
       </div>
 
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-04-symmetry.png" alt="Symmetry enabled on duplicate skull"></div>
+      <!-- STEP 03 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">3</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 03</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Duplicate Skull &amp; Hide Original</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">Use Edit → Duplicate to create a copy of the skull. Hide the original skull and work only on the duplicate.</div>
+          </div>
         </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">4</div></div>
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 04</div>
-          <div class="workflow-step__title">Enable Symmetry on Duplicate Skull</div>
-          <div class="workflow-step__desc">Select the duplicate skull and turn on the Symmetry option. This sets the sagittal midline plane, required for mirroring later.</div>
-        </div>
-      </div>
-
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 05</div>
-          <div class="workflow-step__title">Select Defect Boundary &amp; Separate</div>
-          <div class="workflow-step__desc">Sketch along the edge of the broken/defect area with the Sphere Brush to define the boundary, select the patch, then Edit → Separate. This turns the defect area into its own separate object.</div>
-        </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">5</div></div>
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-05-select-boundary.png" alt="Sphere brush selecting defect boundary"></div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-03-duplicate-hide.png" alt="Duplicated skull with original hidden" style="width:100%;height:auto;display:block">
         </div>
       </div>
 
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-06-mirror-select.png" alt="Mirrored region highlighted on healthy side"></div>
+      <!-- STEP 04 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">4</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 04</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Enable Symmetry on Duplicate Skull</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">Select the duplicate skull and turn on the Symmetry option. This sets the sagittal midline plane, required for mirroring later.</div>
+          </div>
         </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">6</div></div>
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 06</div>
-          <div class="workflow-step__title">Mirror the Separated Patch</div>
-          <div class="workflow-step__desc">Select the separated patch → Analysis (or Edit) → Mirror. Using the symmetry plane, the patch mirrors from the healthy side — giving the correct anatomical shape for the defect.</div>
-        </div>
-      </div>
-
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 07</div>
-          <div class="workflow-step__title">Show Original Skull &amp; Align Patch</div>
-          <div class="workflow-step__desc">Make the original skull visible again. Use the Transform tool (move/rotate/scale) to align the mirrored patch onto the defect site on the original skull.</div>
-        </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">7</div></div>
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-07-separate-menu.png" alt="Edit menu Separate option"></div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-04-symmetry.png" alt="Symmetry enabled on duplicate skull" style="width:100%;height:auto;display:block">
         </div>
       </div>
 
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-08-sculpt-align.png" alt="Sculpt brushes fine-tuning surface fit"></div>
+      <!-- STEP 05 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">5</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 05</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Select Defect Boundary &amp; Separate</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">Sketch along the edge of the broken/defect area with the Sphere Brush to define the boundary, select the patch, then Edit → Separate. This turns the defect area into its own separate object.</div>
+          </div>
         </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">8</div></div>
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 08</div>
-          <div class="workflow-step__title">Fine Alignment with Sculpt Brushes</div>
-          <div class="workflow-step__desc">Use Sculpt → Brushes (Drag, ShrinkWrap, Robust Smooth) to fit the patch precisely to the curvature of the original skull, with no gaps or overlaps.</div>
-        </div>
-      </div>
-
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 09</div>
-          <div class="workflow-step__title">Smooth Edges with Refine Brush</div>
-          <div class="workflow-step__desc">Select the patch → Sculpt → Brushes → Refine. This blends the patch edges seamlessly into the surrounding skull surface.</div>
-        </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">9</div></div>
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-09-refine.png" alt="Refine brush smoothing patch edges"></div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-05-select-boundary.png" alt="Sphere brush selecting defect boundary" style="width:100%;height:auto;display:block">
         </div>
       </div>
 
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-10-voronoi-pattern.png" alt="Voronoi lattice pattern on cranial plate"></div>
+      <!-- STEP 06 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">6</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 06</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Mirror the Separated Patch</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">Select the separated patch → Analysis (or Edit) → Mirror. Using the symmetry plane, the patch mirrors from the healthy side — giving the correct anatomical shape for the defect.</div>
+          </div>
         </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">10</div></div>
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 10</div>
-          <div class="workflow-step__title">Create Voronoi Pattern (Dual Edges)</div>
-          <div class="workflow-step__desc">Edit → Make Pattern (Voronoi/Lattice). A dual-edge voronoi pattern is generated on the plate — lighter weight, with openings for drainage and bone growth.</div>
-        </div>
-      </div>
-
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 11</div>
-          <div class="workflow-step__title">Add Flanges</div>
-          <div class="workflow-step__desc">Use the Draw brush to add flanges (small extra lips of material) along the edges of the plate, for fixation and added strength.</div>
-        </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">11</div></div>
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-11-flanges.png" alt="Flanges added along plate edges"></div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-06-mirror-select.png" alt="Mirrored region highlighted on healthy side" style="width:100%;height:auto;display:block">
         </div>
       </div>
 
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-12-screw-holes.png" alt="Cylinders placed on flanges for screw holes"></div>
+      <!-- STEP 07 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">7</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 07</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Show Original Skull &amp; Align Patch</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">Make the original skull visible again. Use the Transform tool (move/rotate/scale) to align the mirrored patch onto the defect site on the original skull.</div>
+          </div>
         </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">12</div></div>
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 12</div>
-          <div class="workflow-step__title">Add Cylinders for Screw Holes</div>
-          <div class="workflow-step__desc">Use the Add Cylinder tool to place cylinders on the flanges, set the diameter to match screw size, align, then apply Boolean Difference to create fixation screw holes.</div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-07-separate-menu.png" alt="Edit menu Separate option" style="width:100%;height:auto;display:block">
         </div>
       </div>
 
-      <div class="workflow-step reveal">
-        <div class="workflow-step__content">
-          <div class="workflow-step__label">Step 13</div>
-          <div class="workflow-step__title">Export STL</div>
-          <div class="workflow-step__desc">Run Analysis → Inspector one more time to confirm no errors, then File → Export → STL (binary format) — ready for printing/casting.</div>
+      <!-- STEP 08 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">8</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 08</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Fine Alignment with Sculpt Brushes</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">Use Sculpt → Brushes (Drag, ShrinkWrap, Robust Smooth) to fit the patch precisely to the curvature of the original skull, with no gaps or overlaps.</div>
+          </div>
         </div>
-        <div class="workflow-step__node"><div class="workflow-step__num">13</div></div>
-        <div class="workflow-step__content">
-          <div class="feature-row__img"><img src="images/step-13-export.png" alt="Export Mesh dialog saving final plate as STL"></div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-08-sculpt-align.png" alt="Sculpt brushes fine-tuning surface fit" style="width:100%;height:auto;display:block">
+        </div>
+      </div>
+
+      <!-- STEP 09 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">9</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 09</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Smooth Edges with Refine Brush</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">Select the patch → Sculpt → Brushes → Refine. This blends the patch edges seamlessly into the surrounding skull surface.</div>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-09-refine.png" alt="Refine brush smoothing patch edges" style="width:100%;height:auto;display:block">
+        </div>
+      </div>
+
+      <!-- STEP 10 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">10</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 10</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Create Voronoi Pattern (Dual Edges)</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">Edit → Make Pattern (Voronoi/Lattice). A dual-edge voronoi pattern is generated on the plate — lighter weight, with openings for drainage and bone growth.</div>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-10-voronoi-pattern.png" alt="Voronoi lattice pattern on cranial plate" style="width:100%;height:auto;display:block">
+        </div>
+      </div>
+
+      <!-- STEP 11 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">11</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 11</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Add Flanges</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">Use the Draw brush to add flanges (small extra lips of material) along the edges of the plate, for fixation and added strength.</div>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-11-flanges.png" alt="Flanges added along plate edges" style="width:100%;height:auto;display:block">
+        </div>
+      </div>
+
+      <!-- STEP 12 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">12</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 12</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Add Cylinders for Screw Holes</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">Use the Add Cylinder tool to place cylinders on the flanges, set the diameter to match screw size, align, then apply Boolean Difference to create fixation screw holes.</div>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-12-screw-holes.png" alt="Cylinders placed on flanges for screw holes" style="width:100%;height:auto;display:block">
+        </div>
+      </div>
+
+      <!-- STEP 13 -->
+      <div class="mirror-step reveal">
+        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem">
+          <div style="flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--accent,#06b6d4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem">13</div>
+          <div>
+            <div style="color:var(--accent,#06b6d4);font-size:.75rem;letter-spacing:.08em;font-weight:600;margin-bottom:.25rem">STEP 13</div>
+            <div style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:.35rem">Export STL</div>
+            <div style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.5">Run Analysis → Inspector one more time to confirm no errors, then File → Export → STL (binary format) — ready for printing/casting.</div>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(6,182,212,.3);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)">
+          <img src="images/step-13-export.png" alt="Export Mesh dialog saving final plate as STL" style="width:100%;height:auto;display:block">
         </div>
       </div>
 
