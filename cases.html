@@ -23,49 +23,95 @@
 <section class="section">
   <div class="container">
 
-    <!-- CASE 1 -->
+    <!-- CASE 01 -->
     <div class="case-card reveal" id="case1" style="margin-bottom:3rem">
-      <div class="case-card__img" style="height:280px;overflow:hidden">
-        <img src="images/Case_01.png" alt="Case 01 — fronto-temporal-parietal defect reconstruction" style="width:100%;height:100%;object-fit:contain;background:#0B1B3A">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px">
+        <div style="aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#0B1B3A">
+          <img src="images/c12.png" alt="Case 01 skull with fronto-parietal defect, frontal view" style="width:100%;height:100%;object-fit:contain">
+        </div>
+        <div style="aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#0B1B3A">
+          <img src="images/step-10-voronoi-pattern.png" alt="Case 01 lattice mesh cranial plate, top view" style="width:100%;height:100%;object-fit:contain">
+        </div>
+        <div style="aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#0B1B3A">
+          <img src="images/C1.png" alt="Case 01 lattice plate fitted onto skull defect" style="width:100%;height:100%;object-fit:contain">
+        </div>
       </div>
       <div class="case-card__body">
-        <div class="case-card__badge">✅ Completed · Frontal-Temporal-Parietal</div>
-        <div class="case-card__title">Case 01 — Large Fronto-Temporal-Parietal Cranial Plate</div>
-        <div class="case-card__desc">A unilateral decompressive hemicraniectomy defect was reconstructed using CT segmentation in 3D Slicer, followed by mirrored-defect plate design in Meshmixer. A two-part negative mold was printed in PLA and used intraoperatively to shape a PMMA implant.</div>
+        <div class="case-card__badge">✅ Completed · Fronto-Parietal</div>
+        <div class="case-card__title">Case 01 — Fronto-Parietal Defect with Lattice Implant</div>
+        <div class="case-card__desc">A right-sided fronto-parietal cranial defect, secondary to decompressive craniectomy, was reconstructed using the mirror technique in Meshmixer. The defect boundary was traced and mirrored from the healthy contralateral hemisphere across the sagittal plane, then offset into a Voronoi lattice structure to reduce implant weight while preserving structural integrity. Four titanium mini-plate fixation points were incorporated along the plate periphery for secure intraoperative anchoring. The final geometry was validated for wall thickness and manifold integrity before STL export for mold fabrication.</div>
         <div class="case-card__meta">
-          <span>📐 Defect: F-T-P</span>
-          <span>🖨️ Material: PLA / PMMA</span>
-          <span>⏱️ Print: ~6 hrs</span>
+          <span>📐 Defect: Fronto-Parietal</span>
+          <span>🕸️ Lattice mesh</span>
+          <span>🔩 4-point fixation</span>
+          <span>📅 2026</span>
         </div>
         <div class="case-card__actions">
-          <a href="assets/Case_01_Cranial_Plate.docx" class="btn btn--outline btn--sm" download>📝 Case Report (.docx)</a>
-          <a href="assets/Cranial_plate_negative_mold_using_meshmixer.pdf" class="btn btn--outline btn--sm" download>📄 Methodology PDF</a>
-          <a href="downloads.html" class="btn btn--primary btn--sm" data-dl="stl">📦 Download STL</a>
+          <a href="assets/Case_01_Cranial_Plate.docx" class="btn btn--outline btn--sm" download>📝 Case Report</a>
+          <a href="assets/Cranial_plate_negative_mold_using_meshmixer.pdf" class="btn btn--outline btn--sm" download>📄 PDF</a>
+          <a href="downloads.html" class="btn btn--primary btn--sm" data-dl="stl">📦 STL</a>
         </div>
       </div>
     </div>
 
-    <!-- IMAGE GALLERY STRIP FOR CASE 1 -->
-    <div class="reveal" style="margin-bottom:5rem">
-      <div class="section-header" style="margin-bottom:1.5rem;text-align:left">
-        <span class="tag">🖼️ Build Gallery — Case 01</span>
-        <h3 style="margin-top:.5rem;font-size:1.3rem">Defect Selection → Mirrored Plate → Final Mold</h3>
+    <!-- CASE 02 -->
+    <div class="case-card reveal" id="case2" style="margin-bottom:3rem">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px">
+        <div style="aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#0B1B3A">
+          <img src="images/C0.png" alt="Case 02 skull lateral view with temporal defect" style="width:100%;height:100%;object-fit:contain">
+        </div>
+        <div style="aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#0B1B3A">
+          <img src="images/step-11-flanges.png" alt="Case 02 lattice plate with fixation flanges" style="width:100%;height:100%;object-fit:contain">
+        </div>
+        <div style="aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#0B1B3A">
+          <img src="images/C3.png" alt="Case 02 plate aligned on temporal region" style="width:100%;height:100%;object-fit:contain">
+        </div>
       </div>
-      <div class="gallery-thumb-row" style="gap:1.25rem">
-        <div style="width:160px;height:160px;border-radius:10px;overflow:hidden;border:2px solid var(--border);background:#0B1B3A">
-          <img src="images/C1.png" style="width:100%;height:100%;object-fit:contain" alt="Defect boundary outlined">
+      <div class="case-card__body">
+        <div class="case-card__badge" style="color:var(--sky);background:rgba(59,130,246,0.1)">✅ Completed · Fronto-Temporal</div>
+        <div class="case-card__title">Case 02 — Fronto-Temporal Lattice Plate (Lateral View)</div>
+        <div class="case-card__desc">This case documents a lateral-view design pass on a fronto-temporal lattice prosthesis, focused on refining fit against the curved temporal contours near the zygomatic arch. Screw-hole placement was repositioned closer to the fixation flange to avoid thin bone margins identified during the CT review. A 3–5 mm uniform offset was applied between the plate's inner surface and the native skull to prevent dural compression, and wall thickness was re-verified above the 3 mm clinical minimum prior to finalizing the mold geometry for casting.</div>
+        <div class="case-card__meta">
+          <span>📐 Defect: Fronto-Temporal</span>
+          <span>🪞 Mirrored anatomy</span>
+          <span>📏 3–5 mm offset</span>
+          <span>📅 2026</span>
         </div>
-        <div style="width:160px;height:160px;border-radius:10px;overflow:hidden;border:2px solid var(--border);background:#0B1B3A">
-          <img src="images/C2.png" style="width:100%;height:100%;object-fit:contain" alt="Skull front view with defect">
+        <div class="case-card__actions">
+          <a href="assets/Case_02_Cranial_Plate.docx" class="btn btn--outline btn--sm" download>📝 Case Report</a>
+          <a href="assets/Cranial_plate_negative_mold_using_meshmixer.pdf" class="btn btn--outline btn--sm" download>📄 PDF</a>
+          <a href="downloads.html" class="btn btn--primary btn--sm" data-dl="stl">📦 STL</a>
         </div>
-        <div style="width:160px;height:160px;border-radius:10px;overflow:hidden;border:2px solid var(--border);background:#0B1B3A">
-          <img src="images/C4.png" style="width:100%;height:100%;object-fit:contain" alt="Reconstructed skull model">
+      </div>
+    </div>
+
+    <!-- CASE 03 -->
+    <div class="case-card reveal" id="case3" style="margin-bottom:3rem">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px">
+        <div style="aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#0B1B3A">
+          <img src="images/C4.png" alt="Case 03 skull posterior view with large defect" style="width:100%;height:100%;object-fit:contain">
         </div>
-        <div style="width:160px;height:160px;border-radius:10px;overflow:hidden;border:2px solid var(--border);background:#0B1B3A">
-          <img src="images/C6.png" style="width:100%;height:100%;object-fit:contain" alt="Final mirrored plate solid">
+        <div style="aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#0B1B3A">
+          <img src="images/C6.png" alt="Case 03 solid cranial plate surface" style="width:100%;height:100%;object-fit:contain">
         </div>
-        <div style="width:160px;height:160px;border-radius:10px;overflow:hidden;border:2px solid var(--border);background:#0B1B3A">
-          <img src="images/C5.png" style="width:100%;height:100%;object-fit:contain" alt="Plate fitted onto skull">
+        <div style="aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:#0B1B3A">
+          <img src="images/C5.png" alt="Case 03 plate fitted onto parieto-occipital region" style="width:100%;height:100%;object-fit:contain">
+        </div>
+      </div>
+      <div class="case-card__body">
+        <div class="case-card__badge">✅ Completed · Parieto-Occipital</div>
+        <div class="case-card__title">Case 03 — Large Parieto-Occipital Solid Plate</div>
+        <div class="case-card__desc">A large parieto-occipital defect exceeding 100 cm² required a solid (non-lattice) implant surface to provide adequate structural coverage over the affected region. The mirrored geometry was smoothed using Laplacian and Refine brushes to eliminate stepping artifacts from the CT reconstruction, ensuring a clean margin blend against the surrounding native bone. Given the defect's size and posterior load-bearing considerations, the design team opted against lattice perforation in favor of a continuous solid shell, prioritizing mechanical stability over weight reduction for this specific anatomical region.</div>
+        <div class="case-card__meta">
+          <span>📐 Defect: Parieto-Occipital</span>
+          <span>🧱 Solid surface</span>
+          <span>📐 Wide coverage</span>
+          <span>📅 2026</span>
+        </div>
+        <div class="case-card__actions">
+          <a href="assets/Case_03_Cranial_Plate.docx" class="btn btn--outline btn--sm" download>📝 Case Report</a>
+          <a href="assets/Cranial_plate_negative_mold_using_meshmixer.pdf" class="btn btn--outline btn--sm" download>📄 PDF</a>
+          <a href="downloads.html" class="btn btn--primary btn--sm" data-dl="stl">📦 STL</a>
         </div>
       </div>
     </div>
