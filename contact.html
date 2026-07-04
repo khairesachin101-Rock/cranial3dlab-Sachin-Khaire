@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Cranial3DLab — questions, collaboration, or feedback.">
+  <title>Contact — Cranial3DLab</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+<div id="nav"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Contact</div>
+    <span class="tag" style="color:var(--accent);background:rgba(6,182,212,.15)">✉️ Get in Touch</span>
+    <h1 style="margin-top:.75rem">Contact Us</h1>
+    <p>Questions about a module, a case study, or interested in collaborating? Send a message.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="reveal reveal--left">
+        <h3 style="font-size:1.3rem;margin-bottom:1.5rem">Contact Information</h3>
+
+        <div class="contact-info__item">
+          <div class="contact-info__icon">👤</div>
+          <div>
+            <div class="contact-info__label">Maintained By</div>
+            <div class="contact-info__value">Sachin Balu Khaire</div>
+          </div>
+        </div>
+        <div class="contact-info__item">
+          <div class="contact-info__icon">✉️</div>
+          <div>
+            <div class="contact-info__label">Email</div>
+            <div class="contact-info__value">sachinkhaire1451@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-info__item">
+          <div class="contact-info__icon">📞</div>
+          <div>
+            <div class="contact-info__label">Phone</div>
+            <div class="contact-info__value">+91 90222 61911</div>
+          </div>
+        </div>
+        <div class="contact-info__item">
+          <div class="contact-info__icon">🏛️</div>
+          <div>
+            <div class="contact-info__label">Institution</div>
+            <div class="contact-info__value">IIT Guwahati · Biomedical Sciences &amp; Engineering</div>
+          </div>
+        </div>
+
+        <div class="contact-socials">
+          <a href="https://www.linkedin.com/in/skhaire2812" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="https://github.com" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">⌥</a>
+          <a href="mailto:sachinkhaire1451@gmail.com" class="social-btn" aria-label="Email">✉</a>
+        </div>
+      </div>
+
+      <div class="reveal reveal--right">
+        <form class="form" id="contactForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option>General Question</option>
+              <option>Case Study Inquiry</option>
+              <option>Collaboration / Research</option>
+              <option>Report an Issue</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" style="align-self:flex-start">Send Message →</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

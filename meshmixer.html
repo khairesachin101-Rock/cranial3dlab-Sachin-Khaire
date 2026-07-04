@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn Meshmixer for cranial plate design — 10 structured modules from CT import to STL export.">
+  <title>Learn Meshmixer — Cranial3DLab</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+  <style>
+    .module-detail {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      scroll-margin-top: 100px;
+      transition: box-shadow var(--mid) var(--ease);
+    }
+    .module-detail:hover { box-shadow: 0 12px 40px rgba(21,70,160,0.08); }
+    .module-detail__header {
+      display: flex; align-items: flex-start; gap: 1.25rem; margin-bottom: 1.5rem;
+    }
+    .module-detail__num-badge {
+      background: linear-gradient(135deg, var(--sky), var(--accent));
+      color: var(--white); font-weight: 800;
+      width: 52px; height: 52px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .module-detail__title { font-family: var(--display); font-size: 1.5rem; line-height: 1.2; }
+    .module-detail__sub   { font-size: .875rem; color: var(--slate); margin-top: .25rem; }
+    .step-list { counter-reset: steps; }
+    .step-list li {
+      counter-increment: steps;
+      position: relative;
+      padding: .6rem 0 .6rem 2.5rem;
+      font-size: .9rem; color: var(--slate);
+      border-bottom: 1px dashed var(--border);
+      line-height: 1.6;
+    }
+    .step-list li:last-child { border-bottom: none; }
+    .step-list li::before {
+      content: counter(steps);
+      position: absolute; left: 0; top: .55rem;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--ice); color: var(--cobalt);
+      font-size: .72rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .code-block {
+      background: var(--navy); color: #93C5FD;
+      border-radius: 10px; padding: 1rem 1.25rem;
+      font-family: var(--mono); font-size: .82rem;
+      line-height: 1.7; margin: 1rem 0;
+      border: 1px solid rgba(255,255,255,.06);
+      overflow-x: auto;
+    }
+    .tip-box {
+      background: rgba(16,185,129,.06);
+      border: 1px solid rgba(16,185,129,.2);
+      border-left: 4px solid var(--success);
+      border-radius: 0 10px 10px 0;
+      padding: .85rem 1.1rem;
+      font-size: .875rem; margin: 1rem 0;
+    }
+    .tip-box strong { color: #059669; }
+    .module-progress { margin-bottom: 3rem; }
+    .side-toc {
+      position: sticky; top: 90px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.25rem;
+    }
+    .side-toc h4 { font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--slate); margin-bottom: 1rem; }
+    .side-toc a {
+      display: block; padding: .4rem .6rem;
+      font-size: .85rem; color: var(--slate);
+      border-radius: 6px; border-left: 2px solid transparent;
+      transition: all var(--fast);
+      margin-bottom: .2rem;
+    }
+    .side-toc a:hover { color: var(--cobalt); background: var(--ice); border-left-color: var(--sky); }
+    .learn-layout {
+      display: grid; grid-template-columns: 220px 1fr;
+      gap: 2.5rem; align-items: start;
+    }
+    @media (max-width: 900px) {
+      .learn-layout { grid-template-columns: 1fr; }
+      .side-toc { position: static; }
+    }
+  </style>
+</head>
+<body>
+<div id="nav"></div>
+
+<div class="page-hero alt" style="padding-bottom:4rem">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Learn Meshmixer</div>
+    <span class="tag" style="color:var(--accent);background:rgba(6,182,212,.15)">🎓 10 Modules</span>
+    <h1 style="margin-top:.75rem">Learn Meshmixer for<br>Cranial Reconstruction</h1>
+    <p>From raw DICOM data to a surgical-ready cranial plate — using only free, open-source software.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap">
+      <a href="downloads.html" class="btn btn--primary">⬇️ Download All STL Files</a>
+      <a href="workflow.html" class="btn btn--ghost">See Full Workflow</a>
+    </div>
+  </div>
+</div>
+
+<section class="section section--alt">
+  <div class="container">
+
+    <div class="module-progress reveal">
+      <div class="section-header" style="margin-bottom:2rem">
+        <span class="tag">📊 Course Progress</span>
+        <h2>10 Learning Modules</h2>
+        <p>Each module builds on the previous. Work through them in order for best results.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:2rem">
+        <a href="#m1" style="text-decoration:none">
+          <div style="background:var(--cobalt);color:var(--white);border-radius:10px;padding:.75rem;text-align:center;font-size:.8rem;font-weight:700;transition:transform .2s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''">01<br>Intro</div>
+        </a>
+        <a href="#ct-stl" style="text-decoration:none"><div style="background:var(--sky);color:var(--white);border-radius:10px;padding:.75rem;text-align:center;font-size:.8rem;font-weight:700;transition:transform .2s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''">02<br>CT→STL</div></a>
+        <a href="#defect" style="text-decoration:none"><div style="background:var(--accent);color:var(--white);border-radius:10px;padding:.75rem;text-align:center;font-size:.8rem;font-weight:700;transition:transform .2s" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform=''">03<br>Defect</div></a>
+        <a href="#mirror" style="text-decoration:none"><div style="background:var(--cobalt);color:var(--white);border-radius:10px;padding:.75rem;text-align:center;font-size:.8rem;font-weight:700">04<br>Mirror</div></a>
+        <a href="#surface" style="text-decoration:none"><div style="background:var(--sky);color:var(--white);border-radius:10px;padding:.75rem;text-align:center;font-size:.8rem;font-weight:700">05<br>Surface</div></a>
+        <a href="#thickness" style="text-decoration:none"><div style="background:var(--accent);color:var(--white);border-radius:10px;padding:.75rem;text-align:center;font-size:.8rem;font-weight:700">06<br>Thickness</div></a>
+        <a href="#screws" style="text-decoration:none"><div style="background:var(--cobalt);color:var(--white);border-radius:10px;padding:.75rem;text-align:center;font-size:.8rem;font-weight:700">07<br>Screws</div></a>
+        <a href="#mold" style="text-decoration:none"><div style="background:var(--sky);color:var(--white);border-radius:10px;padding:.75rem;text-align:center;font-size:.8rem;font-weight:700">08<br>Mold</div></a>
+        <a href="#export" style="text-decoration:none"><div style="background:var(--accent);color:var(--white);border-radius:10px;padding:.75rem;text-align:center;font-size:.8rem;font-weight:700">09<br>Export</div></a>
+        <a href="#validate" style="text-decoration:none"><div style="background:var(--cobalt);color:var(--white);border-radius:10px;padding:.75rem;text-align:center;font-size:.8rem;font-weight:700">10<br>Validate</div></a>
+      </div>
+    </div>
+
+    <div class="learn-layout">
+      <div>
+        <div class="side-toc">
+          <h4>Table of Contents</h4>
+          <a href="#m1">01 · Introduction</a>
+          <a href="#ct-stl">02 · CT to STL</a>
+          <a href="#defect">03 · Defect Assessment</a>
+          <a href="#mirror">04 · Mirroring</a>
+          <a href="#surface">05 · Surface Creation</a>
+          <a href="#thickness">06 · Thickness Generation</a>
+          <a href="#screws">07 · Screw Hole Design</a>
+          <a href="#mold">08 · Mold Design</a>
+          <a href="#export">09 · STL Export</a>
+          <a href="#validate">10 · Final Validation</a>
+        </div>
+      </div>
+
+      <div>
+        <!-- MODULE 1 -->
+        <div class="module-detail reveal" id="m1">
+          <div class="module-detail__header">
+            <div class="module-detail__num-badge">01</div>
+            <div>
+              <div class="module-detail__title">Introduction to Cranial Reconstruction</div>
+              <div class="module-detail__sub">Overview · Software Setup · DICOM Basics</div>
+            </div>
+          </div>
+          <p style="color:var(--slate);margin-bottom:1rem">Before modeling, understand the clinical context — why cranioplasty is needed, what materials are used, and how 3D printing fits into the surgical workflow.</p>
+          <div class="info-box"><strong>Software Required:</strong> 3D Slicer (free), Autodesk Meshmixer (free), Ultimaker Cura (free), any FDM 3D printer.</div>
+          <ol class="step-list">
+            <li>Install 3D Slicer from <strong>slicer.org</strong> — use version 5.x or later</li>
+            <li>Download and install Meshmixer from Autodesk's official site (free)</li>
+            <li>Understand DICOM format: a stack of 2D CT slices encoding Hounsfield units (HU)</li>
+            <li>Learn key HU thresholds: Air ≈ −1000, Soft tissue ≈ 40–80, Bone ≈ 400–1000</li>
+            <li>Review anatomy: calvaria, diploe, inner/outer cortical tables, suture lines</li>
+            <li>Familiarize with STL format: tessellated triangular mesh, no color/texture data</li>
+          </ol>
+          <div class="tip-box"><strong>💡 Tip:</strong> Cranial bone HU values typically range 600–1800. Set your lower threshold to ~250 to capture trabecular bone and avoid gaps in the model.</div>
+        </div>
+
+        <!-- MODULE 2 -->
+        <div class="module-detail reveal" id="ct-stl">
+          <div class="module-detail__header">
+            <div class="module-detail__num-badge">02</div>
+            <div>
+              <div class="module-detail__title">CT to STL Workflow</div>
+              <div class="module-detail__sub">3D Slicer · DICOM Import · Bone Segmentation · STL Export</div>
+            </div>
+          </div>
+          <p style="color:var(--slate);margin-bottom:1rem">Convert raw CT DICOM data into a clean, watertight STL skull model suitable for Meshmixer processing.</p>
+          <ol class="step-list">
+            <li>Open 3D Slicer → <strong>File → Add DICOM Data</strong> → import the CT folder</li>
+            <li>Go to <strong>Segment Editor</strong> module from the module selector</li>
+            <li>Click <strong>Add</strong> to create a new segmentation, name it "Skull"</li>
+            <li>Select the <strong>Threshold</strong> effect. Set Lower: 250, Upper: 3000</li>
+            <li>Click <strong>Apply</strong> — green voxels show bone tissue</li>
+            <li>Use <strong>Island</strong> effect → Keep Largest Island to remove small noise</li>
+            <li>Apply <strong>Smoothing</strong> (Gaussian, σ = 1.0 mm) to remove stepping artifact</li>
+            <li>Right-click segmentation → <strong>Export to Files</strong> → Format: STL → Save</li>
+          </ol>
+          <div class="code-block">
+# 3D Slicer Python console alternative:
+segmentationNode = slicer.mrmlScene.AddNewNodeByClass("vtkMRMLSegmentationNode")
+slicer.modules.segmentations.logic().ImportLabelmapToSegmentationNode(
+    labelmapNode, segmentationNode
+)
+          </div>
+          <div class="tip-box"><strong>💡 Tip:</strong> For 1.25 mm slice CT data, the STL will have ~500K–2M triangles. Use Meshmixer's "Reduce" tool to bring it to 300K for workable file size without losing clinical accuracy.</div>
+        </div>
+
+        <!-- MODULE 3 -->
+        <div class="module-detail reveal" id="defect">
+          <div class="module-detail__header">
+            <div class="module-detail__num-badge">03</div>
+            <div>
+              <div class="module-detail__title">Defect Assessment</div>
+              <div class="module-detail__sub">Meshmixer Inspector · Boundary Analysis · Measurements</div>
+            </div>
+          </div>
+          <p style="color:var(--slate);margin-bottom:1rem">Systematically analyze the cranial defect to understand its boundaries, orientation, and relationship to adjacent anatomical structures.</p>
+          <ol class="step-list">
+            <li>Import the skull STL into Meshmixer: <strong>File → Open</strong></li>
+            <li>Go to <strong>Analysis → Inspector</strong> — click "Auto Repair All" to fix mesh errors</li>
+            <li>Use <strong>Measure</strong> tool (Analysis menu) to record defect dimensions in cm</li>
+            <li>In <strong>View</strong>, enable "Show Boundaries" to visualize defect edges (highlighted pink)</li>
+            <li>Use the <strong>Select</strong> tool with Lasso to manually mark the defect region</li>
+            <li>Check for irregularities at the defect margin using Smooth Brush (Shift+B)</li>
+            <li>Document: anteroposterior distance, mediolateral distance, maximum depth</li>
+            <li>Identify which skull regions are involved: frontal, temporal, parietal, occipital</li>
+          </ol>
+          <div class="tip-box"><strong>💡 Tip:</strong> Average FTP (fronto-temporal-parietal) defect post-hemicraniectomy: ~12.8 cm × 11.4 cm. Document this before designing — it defines your implant's outer boundary.</div>
+        </div>
+
+        <!-- MODULE 4 -->
+        <div class="module-detail reveal" id="mirror">
+          <div class="module-detail__header">
+            <div class="module-detail__num-badge">04</div>
+            <div>
+              <div class="module-detail__title">Mirroring Technique</div>
+              <div class="module-detail__sub">Symmetry Selection · Contralateral Mirror · Boolean Operations</div>
+            </div>
+          </div>
+          <p style="color:var(--slate);margin-bottom:1rem">Leverage natural bilateral skull symmetry to reconstruct missing anatomy by mirroring the healthy contralateral hemisphere.</p>
+          <ol class="step-list">
+            <li>With skull open in Meshmixer, switch to <strong>Select</strong> tool</li>
+            <li>Enable <strong>Symmetry</strong> checkbox in the Select options panel</li>
+            <li>Use Lasso or Brush to select the outer boundary of the skull defect</li>
+            <li>With Symmetry ON, the mirror selection automatically appears on the opposite side</li>
+            <li>Disable Symmetry for the defect side; keep only the healthy mirror selection active</li>
+            <li>Click <strong>Edit → Separate</strong> to isolate the mirrored healthy tissue as a new object</li>
+            <li>With the separated piece selected: <strong>Edit → Mirror</strong> → choose sagittal axis (X)</li>
+            <li>Align the mirrored piece to the defect using <strong>Transform</strong> tool if needed</li>
+          </ol>
+          <div class="tip-box"><strong>💡 Tip:</strong> Perfect symmetry is rare in clinical patients. After mirroring, check the plate's fit by overlaying it on the skull and visually inspecting the transition zones. Minor manual sculpting (Sculpt tools) may be needed at the margins.</div>
+        </div>
+
+        <!-- MODULE 5 -->
+        <div class="module-detail reveal" id="surface">
+          <div class="module-detail__header">
+            <div class="module-detail__num-badge">05</div>
+            <div>
+              <div class="module-detail__title">Surface Creation & Smoothing</div>
+              <div class="module-detail__sub">Laplacian Smoothing · Sculpt Tools · Edge Refinement</div>
+            </div>
+          </div>
+          <ol class="step-list">
+            <li>Select the mirrored plate mesh → <strong>Deform → Smooth</strong> (Laplacian, 10 iterations)</li>
+            <li>Use <strong>Sculpt</strong> → Smooth brush (S key) to manually smooth rough transition zones</li>
+            <li>Use <strong>Sculpt</strong> → Flatten brush at margins to ensure good bone contact</li>
+            <li>Trim excess plate extending beyond the defect boundary with <strong>Edit → Plane Cut</strong></li>
+            <li>Inspect underside of plate — it should follow the inner table curvature of the skull</li>
+            <li>Apply <strong>Remesh</strong> (Analysis → Remesh) for uniform triangle distribution</li>
+            <li>Run Inspector again: zero holes, zero non-manifold edges before proceeding</li>
+          </ol>
+          <div class="tip-box"><strong>💡 Tip:</strong> The "Draw" sculpt brush (D) is excellent for filling small surface depressions. Use a low strength (10–20%) and build up gradually to avoid over-correction.</div>
+        </div>
+
+        <!-- MODULE 6 -->
+        <div class="module-detail reveal" id="thickness">
+          <div class="module-detail__header">
+            <div class="module-detail__num-badge">06</div>
+            <div>
+              <div class="module-detail__title">Thickness Generation</div>
+              <div class="module-detail__sub">Extrude · Boolean Difference · 1mm Offset</div>
+            </div>
+          </div>
+          <ol class="step-list">
+            <li>With the plate surface selected: <strong>Edit → Extrude</strong> → Direction: Normal, Distance: 4 mm</li>
+            <li>This creates a solid PMMA plate of 4 mm nominal thickness (3–5 mm is clinically standard)</li>
+            <li>To ensure clearance: select the original skull mesh → <strong>Edit → Offset</strong> → 1 mm outward</li>
+            <li>Perform <strong>Edit → Boolean Difference</strong>: skull_offset − plate → removes interference</li>
+            <li>The result is a plate that sits 1 mm proud of the skull surface, preventing pressure on dura</li>
+            <li>Add drain holes (~4 mm diameter) randomly across the plate using Boolean with cylinder primitives</li>
+            <li>Verify minimum wall thickness ≥ 3 mm everywhere using <strong>Analysis → Thickness</strong></li>
+          </ol>
+        </div>
+
+        <!-- MODULE 7 -->
+        <div class="module-detail reveal" id="screws">
+          <div class="module-detail__header">
+            <div class="module-detail__num-badge">07</div>
+            <div>
+              <div class="module-detail__title">Screw Hole Design</div>
+              <div class="module-card__sub">Fixation Points · Titanium Mini-Plate Holes · Boolean Subtraction</div>
+            </div>
+          </div>
+          <ol class="step-list">
+            <li>Place at least 4 fixation points at the plate periphery, spaced ≥ 15 mm apart</li>
+            <li>Add cylinder primitive (Meshmixer Primitives) → radius: 0.75 mm, height: 8 mm</li>
+            <li>Position cylinders perpendicular to the plate surface at each fixation point</li>
+            <li>Select all cylinders + plate → <strong>Edit → Boolean Difference</strong></li>
+            <li>This creates 1.5 mm diameter through-holes for standard neurosurgical titanium screws</li>
+            <li>Add countersink rings (thin disc) at each hole for screw head seating if desired</li>
+            <li>Label fixation point locations in your documentation for the surgical team</li>
+          </ol>
+          <div class="tip-box"><strong>💡 Tip:</strong> Standard titanium mini-plate screws are 1.5 mm or 2.0 mm diameter. Design holes 0.2–0.3 mm larger to account for FDM printing tolerances and PMMA cast shrinkage (typically 0.3–0.5%).</div>
+        </div>
+
+        <!-- MODULE 8 -->
+        <div class="module-detail reveal" id="mold">
+          <div class="module-detail__header">
+            <div class="module-detail__num-badge">08</div>
+            <div>
+              <div class="module-detail__title">Negative Mold Design</div>
+              <div class="module-card__sub">Two-Part Mold · Split Plane · PLA Printing</div>
+            </div>
+          </div>
+          <ol class="step-list">
+            <li>Duplicate the final plate model (Ctrl+D)</li>
+            <li>Create a box primitive larger than the plate on all sides by ~10 mm</li>
+            <li>Perform <strong>Boolean Difference</strong>: box − plate = negative mold cavity</li>
+            <li>Use <strong>Plane Cut</strong> at the plate's widest cross-section to split mold into top and bottom halves</li>
+            <li>Add alignment pins (4 mm sphere → 2 mm offset) to ensure precise mold registration</li>
+            <li>Add PMMA pour spout (cone cutout) at the highest point of the mold cavity</li>
+            <li>Add vent holes (2 mm) at extremities to allow air escape during pouring</li>
+            <li>Export each mold half as a separate STL for printing</li>
+          </ol>
+          <div class="tip-box"><strong>💡 Tip:</strong> Print molds with PLA at 0.2 mm layer height, 30% infill, 2 perimeters. STERRAD™ sterilization is compatible with PLA (unlike autoclave which melts it). Cover mold interior with OpSite® drape before casting to prevent adhesion.</div>
+        </div>
+
+        <!-- MODULE 9 -->
+        <div class="module-detail reveal" id="export">
+          <div class="module-detail__header">
+            <div class="module-detail__num-badge">09</div>
+            <div>
+              <div class="module-detail__title">STL Export & Slicing</div>
+              <div class="module-card__sub">Cura Settings · Print Parameters · File Management</div>
+            </div>
+          </div>
+          <ol class="step-list">
+            <li>In Meshmixer: <strong>File → Export → STL Binary</strong> (smaller file size)</li>
+            <li>Open Cura → Add Printer (Creality CR-5 Pro or your FDM printer model)</li>
+            <li>Import STL → orient flat face down on build plate</li>
+            <li>Settings: Layer Height: 0.2 mm | Infill: 30% (Gyroid) | Walls: 3 | Speed: 60 mm/s</li>
+            <li>Enable supports: Tree supports, 45° overhang threshold</li>
+            <li>Material: PLA, 210°C nozzle, 60°C bed</li>
+            <li>Estimated print time: 4–8 h for a full FTP plate mold</li>
+            <li>Slice and preview each layer for artifacts before sending to printer</li>
+          </ol>
+          <div class="code-block">
+# Recommended Cura settings for cranial molds:
+Layer Height:    0.20 mm
+Wall Count:      3
+Top/Bottom:      4 layers
+Infill:          30% Gyroid
+Print Speed:     60 mm/s
+Nozzle Temp:     210°C  (PLA)
+Bed Temp:        60°C
+Supports:        Tree | 45°
+          </div>
+        </div>
+
+        <!-- MODULE 10 -->
+        <div class="module-detail reveal" id="validate">
+          <div class="module-detail__header">
+            <div class="module-detail__num-badge">10</div>
+            <div>
+              <div class="module-detail__title">Final Validation</div>
+              <div class="module-card__sub">Mesh Integrity · Fit Check · Clinical Sign-off</div>
+            </div>
+          </div>
+          <ol class="step-list">
+            <li>Run <strong>Analysis → Inspector</strong> on all final STL files — zero errors required</li>
+            <li>Use <strong>Analysis → Thickness</strong> map — confirm minimum 3 mm wall thickness everywhere</li>
+            <li>Check <strong>Overhangs</strong> in Cura preview — add supports if angles exceed 45°</li>
+            <li>Print a physical model of the skull defect (same STL, same scale) for fit testing</li>
+            <li>After printing the mold, cast a test PMMA piece and physically verify fit on the skull model</li>
+            <li>Obtain neurosurgeon sign-off on fit, symmetry, and fixation hole positions</li>
+            <li>Document: implant dimensions (cm), weight (g), material, print date, sterilization date</li>
+            <li>Archive: all STL files, Meshmixer project, Cura file, surgical photos in patient record</li>
+          </ol>
+          <div class="tip-box"><strong>✅ Completed!</strong> Your cranial plate design is validated and ready for sterilization and clinical use. See the <a href="cases.html" style="color:var(--sky)">Case Studies</a> for real-world examples.</div>
+        </div>
+
+      </div><!-- end content column -->
+    </div><!-- end learn-layout -->
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

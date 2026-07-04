@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cranial3DLab — Open educational platform for patient-specific cranial implant design using Meshmixer, 3D Slicer, and PMMA molding techniques.">
+  <title>Cranial3DLab — Patient-Specific Cranial Plate Design</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+
+<div id="nav"></div>
+
+<!-- ── HERO ── -->
+<section class="hero" aria-label="Hero">
+  <div class="hero__grid container">
+    <div class="hero__text">
+      <h1 class="hero__title">
+        Design Patient-Specific<br>
+        <em>Cranial Implants</em><br>
+        with Open-Source Tools
+      </h1>
+      <p class="hero__desc">
+        Learn to reconstruct CT scans, model cranial defects, and design custom PMMA implant molds using Meshmixer and 3D Slicer — from first principles to surgical-ready output.
+      </p>
+      <div class="hero__stats">
+        <div>
+          <div class="hero__stat-num" data-count="10" data-suffix="+">10+</div>
+          <div class="hero__stat-lbl">Modules</div>
+        </div>
+        <div>
+          <div class="hero__stat-num" data-count="5" data-suffix="+">5+</div>
+          <div class="hero__stat-lbl">Case Studies</div>
+        </div>
+        <div>
+          <div class="hero__stat-num">Free</div>
+          <div class="hero__stat-lbl">Always</div>
+        </div>
+      </div>
+      <div class="hero__actions">
+        <a href="meshmixer.html" class="btn btn--primary">🎓 Start Learning</a>
+        <a href="workflow.html" class="btn btn--ghost">View Workflow →</a>
+      </div>
+    </div>
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__skull-wrap">
+        <div class="hero__skull-bg"></div>
+        <div class="hero__stage">
+          <img src="images/c12.png" alt="3D cranial implant visualization"
+               class="hero__img hero__img--rotate">
+        </div>
+        <div class="hero__badge">
+          <div class="hero__badge-label">Implant Type</div>
+          <div class="hero__badge-value">PMMA</div>
+          <div class="hero__badge-sub">Polymethylmethacrylate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS STRIP ── -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-strip__grid">
+      <div class="stat-item">
+        <div class="stat-item__num"><span data-count="3" data-suffix="D">3D</span></div>
+        <div class="stat-item__lbl">Slicer + Meshmixer</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__num"><span data-count="10" data-suffix="+">10+</span></div>
+        <div class="stat-item__lbl">Design Modules</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__num"><span data-count="6" data-suffix="-Step">6-Step</span></div>
+        <div class="stat-item__lbl">Design Pipeline</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__num"><span data-count="100" data-suffix="%">100%</span></div>
+        <div class="stat-item__lbl">Open-Source Tools</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PLATFORM INTRO ── -->
+<section class="section" aria-labelledby="intro-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">📚 What You'll Learn</span>
+      <h2 id="intro-heading">From CT Scan to Surgical Implant</h2>
+      <p>A structured, hands-on curriculum covering every step of patient-specific cranial plate design — using only free, open-source software.</p>
+    </div>
+    <div class="modules-grid">
+      <!-- Module Cards -->
+      <div class="module-card reveal">
+        <div class="module-card__num">MODULE 01</div>
+        <div class="module-card__icon">🖥️</div>
+        <div class="module-card__title">CT to STL Workflow</div>
+        <div class="module-card__desc">Import DICOM files into 3D Slicer, threshold bone tissue, and export a clean STL skull model for downstream processing.</div>
+        <a href="meshmixer.html#ct-stl" class="module-card__link">Learn more →</a>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-card__num">MODULE 02</div>
+        <div class="module-card__icon">🔍</div>
+        <div class="module-card__title">Defect Assessment</div>
+        <div class="module-card__desc">Analyze the cranial defect boundary, measure dimensions, and identify anatomical landmarks using Meshmixer's Inspector tool.</div>
+        <a href="meshmixer.html#defect" class="module-card__link">Learn more →</a>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-card__num">MODULE 03</div>
+        <div class="module-card__icon">🪞</div>
+        <div class="module-card__title">Mirroring Technique</div>
+        <div class="module-card__desc">Use contralateral symmetry to reconstruct missing skull geometry by mirroring the healthy hemisphere across the midsagittal plane.</div>
+        <a href="meshmixer.html#mirror" class="module-card__link">Learn more →</a>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-card__num">MODULE 04</div>
+        <div class="module-card__icon">🏗️</div>
+        <div class="module-card__title">Surface Creation</div>
+        <div class="module-card__desc">Extract and smooth the mirrored surface, apply Laplacian smoothing, and prepare the mesh for thickness generation.</div>
+        <a href="meshmixer.html#surface" class="module-card__link">Learn more →</a>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-card__num">MODULE 05</div>
+        <div class="module-card__icon">📏</div>
+        <div class="module-card__title">Thickness & Offset</div>
+        <div class="module-card__desc">Add anatomically appropriate thickness (3–5 mm), create a 1 mm offset clearance with Boolean operations for perfect surgical fit.</div>
+        <a href="meshmixer.html#thickness" class="module-card__link">Learn more →</a>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-card__num">MODULE 06</div>
+        <div class="module-card__icon">🔩</div>
+        <div class="module-card__title">Screw Hole Design</div>
+        <div class="module-card__desc">Place titanium mini-plate fixation holes using Boolean subtraction, sized for standard 1.5 mm neurosurgical screws.</div>
+        <a href="meshmixer.html#screws" class="module-card__link">Learn more →</a>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-card__num">MODULE 07</div>
+        <div class="module-card__icon">🧩</div>
+        <div class="module-card__title">Mold Design</div>
+        <div class="module-card__desc">Generate a two-part negative mold from the prosthesis model for intraoperative PMMA casting using FDM-printed PLA molds.</div>
+        <a href="meshmixer.html#mold" class="module-card__link">Learn more →</a>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-card__num">MODULE 08</div>
+        <div class="module-card__icon">✅</div>
+        <div class="module-card__title">Validation & Export</div>
+        <div class="module-card__desc">Run mesh repair, validate watertight integrity, check wall thickness, and export final STL for 3D printing and clinical use.</div>
+        <a href="meshmixer.html#validate" class="module-card__link">Learn more →</a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="meshmixer.html" class="btn btn--primary">View All 10 Modules</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── WORKFLOW PREVIEW ── -->
+<section class="section workflow" aria-labelledby="wf-heading">
+  <div class="container">
+    <div class="section-header reveal" style="color:var(--white)">
+      <span class="tag" style="color:var(--accent);background:rgba(6,182,212,0.15)">🔄 Process</span>
+      <h2 id="wf-heading" style="color:var(--white)">The 6-Step Design Pipeline</h2>
+      <p style="color:rgba(255,255,255,.65)">Our validated workflow mirrors clinical practice at leading neurosurgery centers.</p>
+    </div>
+    <div class="workflow-steps">
+      <div class="workflow-step reveal">
+        <div class="workflow-step__content">
+          <div class="workflow-step__title">CT Acquisition & DICOM Export</div>
+          <div class="workflow-step__desc">128-slice multislice CT at 1.25 mm slice thickness. DICOM series exported from the scanner for reconstruction.</div>
+          <span class="workflow-step__tag">3D Slicer</span>
+        </div>
+        <div class="workflow-step__node">
+          <div class="workflow-step__num">1</div>
+          <div class="workflow-step__label">CT Scan</div>
+        </div>
+        <div class="workflow-step__content workflow-step--empty"></div>
+      </div>
+      <div class="workflow-step reveal">
+        <div class="workflow-step__content workflow-step--empty"></div>
+        <div class="workflow-step__node">
+          <div class="workflow-step__num">2</div>
+          <div class="workflow-step__label">Segment</div>
+        </div>
+        <div class="workflow-step__content">
+          <div class="workflow-step__title">Skull Segmentation & STL</div>
+          <div class="workflow-step__desc">Threshold bone (HU ≥250), clean up noise with island removal, and export a watertight skull mesh as STL.</div>
+          <span class="workflow-step__tag">3D Slicer</span>
+        </div>
+      </div>
+      <div class="workflow-step reveal">
+        <div class="workflow-step__content">
+          <div class="workflow-step__title">Defect Boundary & Lattice Plate Design</div>
+          <div class="workflow-step__desc">Trace the defect margin in Meshmixer, mirror the healthy contralateral anatomy across the midsagittal plane, then offset the surface to a 3–5 mm plate and convert it into a lattice with fixation holes for the titanium mini-plates.</div>
+          <span class="workflow-step__tag">Meshmixer</span>
+        </div>
+        <div class="workflow-step__node">
+          <div class="workflow-step__num">3</div>
+          <div class="workflow-step__label">Design</div>
+        </div>
+        <div class="workflow-step__content workflow-step--empty"></div>
+      </div>
+      <div class="workflow-step reveal">
+        <div class="workflow-step__content workflow-step--empty"></div>
+        <div class="workflow-step__node">
+          <div class="workflow-step__num">4</div>
+          <div class="workflow-step__label">Mold</div>
+        </div>
+        <div class="workflow-step__content">
+          <div class="workflow-step__title">Negative Mold Generation</div>
+          <div class="workflow-step__desc">Boolean-subtract the finished plate to derive a two-part negative mold, then slice and 3D-print it in PLA (0.2 mm layers, FDM) ready for casting.</div>
+          <span class="workflow-step__tag">Cura + FDM</span>
+        </div>
+      </div>
+      <div class="workflow-step reveal">
+        <div class="workflow-step__content">
+          <div class="workflow-step__title">Sterilization & PMMA Casting</div>
+          <div class="workflow-step__desc">STERRAD™ low-temperature plasma sterilization of the printed mold. PMMA poured into the sterile cavity, lined with OpSite® drape, and cured to the plate's final shape.</div>
+          <span class="workflow-step__tag">PMMA + Sterile</span>
+        </div>
+        <div class="workflow-step__node">
+          <div class="workflow-step__num">5</div>
+          <div class="workflow-step__label">Cast</div>
+        </div>
+        <div class="workflow-step__content workflow-step--empty"></div>
+      </div>
+      <div class="workflow-step reveal">
+        <div class="workflow-step__content workflow-step--empty"></div>
+        <div class="workflow-step__node">
+          <div class="workflow-step__num">6</div>
+          <div class="workflow-step__label">Implant</div>
+        </div>
+        <div class="workflow-step__content">
+          <div class="workflow-step__title">Surgical Implantation</div>
+          <div class="workflow-step__desc">Cured PMMA plate placed over the defect and fixed through the pre-designed holes with titanium mini-plates. Drainage holes drilled intraoperatively as needed.</div>
+          <span class="workflow-step__tag">Surgery</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <a href="workflow.html" class="btn btn--primary">Full Workflow Guide →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED CASES ── -->
+<section class="section section--alt" aria-labelledby="cases-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">🏥 Clinical Evidence</span>
+      <h2 id="cases-heading">Featured Case Studies</h2>
+      <p>Real patient cases demonstrating the workflow from CT acquisition through postoperative assessment.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card reveal">
+        <div class="case-card__img">
+          <img src="images/c12.png" alt="Case 01 lattice cranial plate - frontal view">
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__badge">✅ Completed</div>
+          <div class="case-card__title">Case 01 — Fronto-Parietal Defect with Lattice Implant</div>
+          <div class="case-card__desc">Custom PMMA cranial plate designed in Meshmixer for a fronto-parietal defect. Boundary traced from the healthy contralateral side, mirrored, and offset into a lattice mesh with integrated screw-fixation holes for reduced weight and titanium mini-plate anchoring.</div>
+          <div class="case-card__meta">
+            <span>🕸️ Lattice mesh</span>
+            <span>🔩 4-point fixation</span>
+            <span>📅 2025</span>
+          </div>
+          <div class="case-card__actions">
+            <a href="cases.html#case1" class="btn btn--outline btn--sm">View Case</a>
+            <a href="downloads.html" class="btn btn--outline btn--sm" data-dl="report">📄 PDF</a>
+            <a href="downloads.html" class="btn btn--outline btn--sm" data-dl="stl">📦 STL</a>
+          </div>
+        </div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-card__img">
+          <img src="images/C0.png" alt="Case 02 lattice cranial plate - lateral view">
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__badge" style="color:var(--sky);background:rgba(59,130,246,0.1)">🔬 In Progress</div>
+          <div class="case-card__title">Case 02 — Fronto-Temporal Lattice Plate (Lateral View)</div>
+          <div class="case-card__desc">Lateral-view design pass on the same lattice prosthesis, refining fit against temporal contours and screw-hole placement near the fixation flange before finalizing wall thickness for casting.</div>
+          <div class="case-card__meta">
+            <span>🪞 Mirrored anatomy</span>
+            <span>📏 3–5 mm offset</span>
+            <span>📅 2025</span>
+          </div>
+          <div class="case-card__actions">
+            <a href="cases.html#case2" class="btn btn--outline btn--sm">View Case</a>
+            <a href="downloads.html" class="btn btn--outline btn--sm" data-dl="report">📄 PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-card__img">
+          <img src="images/C6.png" alt="Case 03 solid cranial plate - posterior view">
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__badge">✅ Completed</div>
+          <div class="case-card__title">Case 03 — Large Parieto-Occipital Solid Plate</div>
+          <div class="case-card__desc">Larger parieto-occipital defect requiring a solid (non-lattice) implant surface for structural coverage. Smoothed mirrored geometry with a clean margin blend for a flush fit against the surrounding skull.</div>
+          <div class="case-card__meta">
+            <span>🧱 Solid surface</span>
+            <span>📐 Wide coverage</span>
+            <span>📅 2024</span>
+          </div>
+          <div class="case-card__actions">
+            <a href="cases.html#case3" class="btn btn--outline btn--sm">View Case</a>
+            <a href="downloads.html" class="btn btn--outline btn--sm" data-dl="stl">📦 STL</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="cases.html" class="btn btn--primary">All Case Studies →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── DOWNLOADS PREVIEW ── -->
+<section class="section" aria-labelledby="dl-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">⬇️ Resources</span>
+      <h2 id="dl-heading">Free Downloads</h2>
+      <p>Everything you need to follow along — PDF guides, STL models, PowerPoint presentations, and Meshmixer templates.</p>
+    </div>
+    <div class="downloads-grid">
+      <div class="dl-card reveal">
+        <div class="dl-card__icon dl-card__icon--pdf">📄</div>
+        <div>
+          <div class="dl-card__title">Cranial Plate Design Manual</div>
+          <div class="dl-card__desc">Step-by-step PDF guide covering the complete Meshmixer workflow for cranial plate design.</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span class="dl-card__size">PDF · 4.2 MB</span>
+          <button class="btn btn--outline btn--sm" data-dl="pdf">Download</button>
+        </div>
+      </div>
+      <div class="dl-card reveal">
+        <div class="dl-card__icon dl-card__icon--stl">📦</div>
+        <div>
+          <div class="dl-card__title">Case 01 STL Files</div>
+          <div class="dl-card__desc">Complete STL package: skull model, cranial plate, negative mold (top + bottom).</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span class="dl-card__size">ZIP · 18 MB</span>
+          <button class="btn btn--outline btn--sm" data-dl="stl">Download</button>
+        </div>
+      </div>
+      <div class="dl-card reveal">
+        <div class="dl-card__icon dl-card__icon--ppt">📊</div>
+        <div>
+          <div class="dl-card__title">3D Printing in Cranioplasty</div>
+          <div class="dl-card__desc">Conference-ready presentation covering the evidence base and clinical workflow.</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span class="dl-card__size">PPTX · 22 MB</span>
+          <button class="btn btn--outline btn--sm" data-dl="ppt">Download</button>
+        </div>
+      </div>
+      <div class="dl-card reveal">
+        <div class="dl-card__icon dl-card__icon--tmpl">📐</div>
+        <div>
+          <div class="dl-card__title">Meshmixer Template (.mix)</div>
+          <div class="dl-card__desc">Pre-configured Meshmixer project with optimal settings for cranial plate design.</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span class="dl-card__size">MIX · 1.8 MB</span>
+          <button class="btn btn--outline btn--sm" data-dl="template">Download</button>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="downloads.html" class="btn btn--primary">Browse All Downloads →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3D GALLERY PREVIEW ── -->
+<section class="section section--dark" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="section-header reveal" style="color:var(--white)">
+      <span class="tag" style="color:var(--accent);background:rgba(6,182,212,0.15)">🗿 3D Models</span>
+      <h2 id="gallery-heading" style="color:var(--white)">Interactive 3D Gallery</h2>
+      <p style="color:rgba(255,255,255,.65)">Rotate, zoom, and inspect real cranial implant models directly in your browser.</p>
+    </div>
+    <div style="max-width:700px;margin:0 auto">
+      <div class="viewer-wrap reveal">
+        <div class="viewer-placeholder">
+          <div class="icon">🧩</div>
+          <p style="color:rgba(255,255,255,.6);font-size:1rem">Interactive 3D Viewer</p>
+          <p>Cranial implant models load in the full gallery</p>
+          <a href="gallery.html" class="btn btn--primary" style="margin-top:1rem">Open 3D Gallery →</a>
+        </div>
+      </div>
+      <div class="gallery-thumb-row" style="justify-content:center">
+        <div class="gallery-thumb active" style="border-color:var(--sky)">
+          <div style="width:100%;height:100%;background:var(--cobalt);display:flex;align-items:center;justify-content:center;font-size:1.5rem">🧠</div>
+        </div>
+        <div class="gallery-thumb">
+          <div style="width:100%;height:100%;background:#0D2854;display:flex;align-items:center;justify-content:center;font-size:1.5rem">🦴</div>
+        </div>
+        <div class="gallery-thumb">
+          <div style="width:100%;height:100%;background:#091E42;display:flex;align-items:center;justify-content:center;font-size:1.5rem">🔩</div>
+        </div>
+        <div class="gallery-thumb">
+          <div style="width:100%;height:100%;background:#0B2A5C;display:flex;align-items:center;justify-content:center;font-size:1.5rem">📐</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BLOG PREVIEW ── -->
+<section class="section section--alt" aria-labelledby="blog-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">✍️ Blog</span>
+      <h2 id="blog-heading">Latest Articles</h2>
+      <p>Deep dives into cranial reconstruction, material science, and open-source medical engineering.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="blog-card__img" style="background:var(--ice);display:flex;align-items:center;justify-content:center;font-size:3rem">🧬</div>
+        <div class="blog-card__body">
+          <div class="blog-card__cat">Material Science</div>
+          <div class="blog-card__title">Why PMMA Remains the Go-To Material for Low-Cost Cranioplasty</div>
+          <div class="blog-card__exc">A deep dive into the biomechanical and clinical properties of PMMA compared to titanium and PEEK implants.</div>
+          <div class="blog-card__meta"><span>Sachin Khaire</span><span>8 min read</span></div>
+        </div>
+      </div>
+      <div class="blog-card reveal">
+        <div class="blog-card__img" style="background:linear-gradient(135deg,var(--ice),#E0F2FE);display:flex;align-items:center;justify-content:center;font-size:3rem">🖨️</div>
+        <div class="blog-card__body">
+          <div class="blog-card__cat">3D Printing</div>
+          <div class="blog-card__title">FDM vs SLA: Which 3D Printing Technology for Cranial Molds?</div>
+          <div class="blog-card__exc">Comparing fused deposition modeling and stereolithography for surgical mold applications. Cost, resolution, and sterility.</div>
+          <div class="blog-card__meta"><span>Sachin Khaire</span><span>6 min read</span></div>
+        </div>
+      </div>
+      <div class="blog-card reveal">
+        <div class="blog-card__img" style="background:linear-gradient(135deg,#F0FDF4,var(--ice));display:flex;align-items:center;justify-content:center;font-size:3rem">📊</div>
+        <div class="blog-card__body">
+          <div class="blog-card__cat">Clinical Research</div>
+          <div class="blog-card__title">Complication Rates in 3D-Printed PMMA Cranioplasty: Meta-Analysis</div>
+          <div class="blog-card__exc">Analysis of 35+ published cases showing infection rates consistent with traditional methods at a fraction of the cost.</div>
+          <div class="blog-card__meta"><span>Sachin Khaire</span><span>12 min read</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="blog.html" class="btn btn--primary">All Articles →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA STRIP ── -->
+<section style="background:linear-gradient(135deg,var(--cobalt),var(--navy));padding:5rem 0;text-align:center">
+  <div class="container">
+    <div class="reveal">
+      <h2 style="font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);color:var(--white);margin-bottom:1rem">Ready to Design Your First Cranial Plate?</h2>
+      <p style="color:rgba(255,255,255,.7);max-width:500px;margin:0 auto 2rem;font-size:1.05rem">Start with Module 01 — no prior 3D modeling experience required. Just a computer and curiosity.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="meshmixer.html" class="btn btn--primary">🎓 Start Free Course</a>
+        <a href="contact.html" class="btn btn--ghost">Ask a Question</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<div class="toast"></div>
+
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

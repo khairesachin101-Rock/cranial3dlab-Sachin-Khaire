@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Step-by-step workflow for cranial plate design — CT segmentation to PMMA mold printing.">
+  <title>Cranial Plate Workflow — Cranial3DLab</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+<div id="nav"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Workflow</div>
+    <span class="tag" style="color:var(--accent);background:rgba(6,182,212,.15)">🔄 End-to-End Process</span>
+    <h1 style="margin-top:.75rem">Cranial Plate Workflow</h1>
+    <p>From DICOM acquisition to a sterilized, surgery-ready PMMA mold — five stages, each building on the last.</p>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<section class="stats-strip">
+  <div class="container">
+    <div class="stats-strip__grid">
+      <div class="stat-item"><div class="stat-item__num stat-item__accent">5</div><div class="stat-item__lbl">Major Stages</div></div>
+      <div class="stat-item"><div class="stat-item__num">1.25mm</div><div class="stat-item__lbl">CT Slice Thickness</div></div>
+      <div class="stat-item"><div class="stat-item__num">0.2mm</div><div class="stat-item__lbl">Print Layer Height</div></div>
+      <div class="stat-item"><div class="stat-item__num">~$40–100</div><div class="stat-item__lbl">Cost Per Mold</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW DIAGRAM -->
+<section class="section section--dark workflow" aria-labelledby="wf-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">🗺️ The Pipeline</span>
+      <h2 style="color:#fff">Five Stages, One Continuous Build</h2>
+      <p style="color:rgba(255,255,255,.6)">Every cranioplasty mold follows the same backbone — only the defect geometry changes.</p>
+    </div>
+    <div class="workflow-steps">
+      <div class="workflow-step reveal">
+        <div class="workflow-step__content">
+          <div class="workflow-step__label">Stage 01 · Imaging</div>
+          <div class="workflow-step__title">CT Acquisition &amp; DICOM Export</div>
+          <div class="workflow-step__desc">A 128-slice CT scan (≤1.25mm thickness) is taken pre-operatively. Raw DICOM series are exported from the PACS for segmentation.</div>
+          <div class="workflow-step__tag">DICOM</div>
+        </div>
+        <div class="workflow-step__node"><div class="workflow-step__num">1</div></div>
+        <div class="workflow-step__content"></div>
+      </div>
+      <div class="workflow-step reveal">
+        <div class="workflow-step__content"></div>
+        <div class="workflow-step__node"><div class="workflow-step__num">2</div></div>
+        <div class="workflow-step__content">
+          <div class="workflow-step__label">Stage 02 · Segmentation</div>
+          <div class="workflow-step__title">Skull Reconstruction in 3D Slicer</div>
+          <div class="workflow-step__desc">DICOM data is thresholded (bone HU ≥ 250) inside 3D Slicer's Segment Editor, isolating the cranium from soft tissue and exporting a clean STL.</div>
+          <div class="workflow-step__tag">3D Slicer® · STL Export</div>
+        </div>
+      </div>
+      <div class="workflow-step reveal">
+        <div class="workflow-step__content">
+          <div class="workflow-step__label">Stage 03 · Modeling</div>
+          <div class="workflow-step__title">Defect Mirroring &amp; Plate Design</div>
+          <div class="workflow-step__desc">In Meshmixer, the defect boundary is selected, mirrored across the sagittal symmetry plane, thickened by 3–5mm, and Boolean-subtracted to form the implant plate.</div>
+          <div class="workflow-step__tag">Meshmixer® · Mirror + Boolean</div>
+        </div>
+        <div class="workflow-step__node"><div class="workflow-step__num">3</div></div>
+        <div class="workflow-step__content"></div>
+      </div>
+      <div class="workflow-step reveal">
+        <div class="workflow-step__content"></div>
+        <div class="workflow-step__node"><div class="workflow-step__num">4</div></div>
+        <div class="workflow-step__content">
+          <div class="workflow-step__label">Stage 04 · Mold Generation</div>
+          <div class="workflow-step__title">Negative Mold &amp; Slicing</div>
+          <div class="workflow-step__desc">A negative mold replicating the plate's outer surface is generated, split into two pieces, sliced in Cura with 0.2mm layers, and queued for FDM printing in PLA.</div>
+          <div class="workflow-step__tag">Cura® · FDM · PLA</div>
+        </div>
+      </div>
+      <div class="workflow-step reveal">
+        <div class="workflow-step__content">
+          <div class="workflow-step__label">Stage 05 · Surgical Use</div>
+          <div class="workflow-step__title">Sterilization &amp; Intraoperative Molding</div>
+          <div class="workflow-step__desc">Printed molds are sterilized (STERRAD™ or autoclave), draped, and used intraoperatively to shape PMMA bone cement into the final patient-specific implant.</div>
+          <div class="workflow-step__tag">STERRAD™ · PMMA Casting</div>
+        </div>
+        <div class="workflow-step__node"><div class="workflow-step__num">5</div></div>
+        <div class="workflow-step__content"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILED FEATURE ROWS -->
+<section class="section" aria-label="Stage detail">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">🔬 Closer Look</span>
+      <h2>Inside the Two Software Stages</h2>
+    </div>
+
+    <div class="feature-row reveal">
+      <div class="feature-row__img">
+        <img src="images/C0.png" alt="Defect boundary selected on the skull mesh in Meshmixer">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step A</span>
+        <h3 class="feature-row__title">Outline the Defect</h3>
+        <p class="feature-row__desc">With the "Select" brush and Symmetry enabled, the defect boundary is traced once — Meshmixer mirrors it automatically onto the intact side of the skull, giving an anatomically accurate target shape in seconds.</p>
+        <div class="progress-item">
+          <div class="progress-label"><span>Boundary Accuracy</span><span>98%</span></div>
+          <div class="progress-bar"><div class="progress-bar__fill" style="width:98%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row--reverse reveal">
+      <div class="feature-row__img">
+        <img src="images/C3.png" alt="Mirrored surface thickened into a cranial plate">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step B</span>
+        <h3 class="feature-row__title">Mirror, Thicken, Subtract</h3>
+        <p class="feature-row__desc">The mirrored patch is separated, extruded to a 3–5mm prosthesis thickness, offset 1mm from the native bone to avoid a tight fit, then Boolean-subtracted to produce the final implant geometry — ready for mold generation.</p>
+        <div class="progress-item">
+          <div class="progress-label"><span>Fit Tolerance</span><span>±1mm</span></div>
+          <div class="progress-bar"><div class="progress-bar__fill" style="width:92%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row reveal">
+      <div class="feature-row__img">
+        <img src="images/C5.png" alt="Final negative mold ready for printing">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step C</span>
+        <h3 class="feature-row__title">Mold &amp; Print</h3>
+        <p class="feature-row__desc">The plate is shelled into a two-part negative mold. Each half is exported as STL, sliced in Cura at 0.2mm layers with 20–30% infill, and printed in white PLA — biocompatible enough to act as a sterile intraoperative former.</p>
+        <div class="progress-item">
+          <div class="progress-label"><span>Avg. Print Time</span><span>4–8 hrs</span></div>
+          <div class="progress-bar"><div class="progress-bar__fill" style="width:70%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" aria-label="Next steps">
+  <div class="container" style="text-align:center">
+    <span class="tag">📚 Continue Learning</span>
+    <h2 style="margin:1rem 0">See the Workflow Applied to Real Patients</h2>
+    <p style="color:var(--slate);max-width:560px;margin:0 auto 2rem">Every step above is documented end-to-end in our case studies, with downloadable STL files and PDF reports.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="cases.html" class="btn btn--primary">View Case Studies →</a>
+      <a href="meshmixer.html" class="btn btn--outline">Back to Meshmixer Modules</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
