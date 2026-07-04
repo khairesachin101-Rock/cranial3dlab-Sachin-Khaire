@@ -165,11 +165,11 @@
             <li>Install 3D Slicer from <strong>slicer.org</strong> — use version 5.x or later</li>
             <li>Download and install Meshmixer from Autodesk's official site (free)</li>
             <li>Understand DICOM format: a stack of 2D CT slices encoding Hounsfield units (HU)</li>
-            <li>Learn key HU thresholds: Air ≈ −1000, Soft tissue ≈ 40–80, Bone ≈ 400–1000</li>
+            <li>Learn key HU thresholds: Air ≈ −1000, Soft tissue ≈ 40–80, Bone ≈ 226–3000</li>
             <li>Review anatomy: calvaria, diploe, inner/outer cortical tables, suture lines</li>
             <li>Familiarize with STL format: tessellated triangular mesh, no color/texture data</li>
           </ol>
-          <div class="tip-box"><strong>💡 Tip:</strong> Cranial bone HU values typically range 600–1800. Set your lower threshold to ~250 to capture trabecular bone and avoid gaps in the model.</div>
+          <div class="tip-box"><strong>💡 Tip:</strong> Cranial bone HU values typically range 226–3000. Set your lower threshold to ~226 to capture trabecular bone and avoid gaps in the model.</div>
         </div>
 
         <!-- MODULE 2 -->
@@ -186,19 +186,13 @@
             <li>Open 3D Slicer → <strong>File → Add DICOM Data</strong> → import the CT folder</li>
             <li>Go to <strong>Segment Editor</strong> module from the module selector</li>
             <li>Click <strong>Add</strong> to create a new segmentation, name it "Skull"</li>
-            <li>Select the <strong>Threshold</strong> effect. Set Lower: 250, Upper: 3000</li>
+            <li>Select the <strong>Threshold</strong> effect. Set Lower: 226, Upper: 3000</li>
             <li>Click <strong>Apply</strong> — green voxels show bone tissue</li>
             <li>Use <strong>Island</strong> effect → Keep Largest Island to remove small noise</li>
             <li>Apply <strong>Smoothing</strong> (Gaussian, σ = 1.0 mm) to remove stepping artifact</li>
             <li>Right-click segmentation → <strong>Export to Files</strong> → Format: STL → Save</li>
           </ol>
-          <div class="code-block">
-# 3D Slicer Python console alternative:
-segmentationNode = slicer.mrmlScene.AddNewNodeByClass("vtkMRMLSegmentationNode")
-slicer.modules.segmentations.logic().ImportLabelmapToSegmentationNode(
-    labelmapNode, segmentationNode
-)
-          </div>
+         
           <div class="tip-box"><strong>💡 Tip:</strong> For 1.25 mm slice CT data, the STL will have ~500K–2M triangles. Use Meshmixer's "Reduce" tool to bring it to 300K for workable file size without losing clinical accuracy.</div>
         </div>
 
