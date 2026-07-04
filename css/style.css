@@ -791,3 +791,7 @@ model-viewer {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+.step-list {
+  list-style: none;
+  padding-left: 0;
+}
