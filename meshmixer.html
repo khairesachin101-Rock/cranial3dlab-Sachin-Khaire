@@ -315,21 +315,21 @@ slicer.modules.segmentations.logic().ImportLabelmapToSegmentationNode(
           <div class="module-detail__header">
             <div class="module-detail__num-badge">08</div>
             <div>
-              <div class="module-detail__title">Negative Mold Design</div>
-              <div class="module-card__sub">Two-Part Mold · Split Plane · PLA Printing</div>
+              <div class="module-detail__title">Lattice Optimization &amp; Print Preparation</div>
+              <div class="module-card__sub">Voronoi Pattern · Weight Reduction · Print-Ready Geometry</div>
             </div>
           </div>
           <ol class="step-list">
-            <li>Duplicate the final plate model (Ctrl+D)</li>
-            <li>Create a box primitive larger than the plate on all sides by ~10 mm</li>
-            <li>Perform <strong>Boolean Difference</strong>: box − plate = negative mold cavity</li>
-            <li>Use <strong>Plane Cut</strong> at the plate's widest cross-section to split mold into top and bottom halves</li>
-            <li>Add alignment pins (4 mm sphere → 2 mm offset) to ensure precise mold registration</li>
-            <li>Add PMMA pour spout (cone cutout) at the highest point of the mold cavity</li>
-            <li>Add vent holes (2 mm) at extremities to allow air escape during pouring</li>
-            <li>Export each mold half as a separate STL for printing</li>
+            <li>Select the solid plate surface → Edit → Make Pattern → choose <strong>Voronoi/Lattice</strong> style</li>
+            <li>Set cell density and strut thickness (typically 1.5–2 mm struts for structural integrity)</li>
+            <li>Apply the lattice pattern across the plate body — this reduces weight by 30–50% while retaining strength</li>
+            <li>Verify no isolated/floating lattice fragments remain (<strong>Analysis → Inspector</strong>)</li>
+            <li>Add flanges along the plate periphery using the <strong>Draw brush</strong> — these provide extra surface area for fixation</li>
+            <li>Position screw-hole cylinders on the flanges, sized to match titanium mini-plate screws (1.5–2 mm)</li>
+            <li>Apply <strong>Boolean Difference</strong> to cut the screw holes cleanly through the flanges</li>
+            <li>Run a final wall-thickness check (<strong>Analysis → Thickness</strong>) to confirm structural safety before export</li>
           </ol>
-          <div class="tip-box"><strong>💡 Tip:</strong> Print molds with PLA at 0.2 mm layer height, 30% infill, 2 perimeters. STERRAD™ sterilization is compatible with PLA (unlike autoclave which melts it). Cover mold interior with OpSite® drape before casting to prevent adhesion.</div>
+          <div class="tip-box"><strong>💡 Tip:</strong> Voronoi lattice patterns aren't just cosmetic — the open cells allow for bone/tissue drainage, reduce implant weight (important for large FTP defects), and can improve PMMA/bio-material integration if used in cast production. Keep strut thickness ≥1.5 mm to avoid print/cast failure points.</div>
         </div>
 
         <!-- MODULE 9 -->
