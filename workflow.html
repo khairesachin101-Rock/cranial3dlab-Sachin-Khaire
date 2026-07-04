@@ -65,7 +65,7 @@
         <div class="workflow-step__content">
           <div class="workflow-step__label">Stage 03 · Modeling</div>
           <div class="workflow-step__title">Defect Mirroring &amp; Plate Design</div>
-          <div class="workflow-step__desc">In Meshmixer, the defect boundary is selected, mirrored across the sagittal symmetry plane, thickened by 3–5mm, and Boolean-subtracted to form the implant plate.</div>
+          <div class="workflow-step__desc">In Meshmixer, the defect boundary is selected using Symmetry, mirrored across the sagittal midline, separated, aligned, patterned, and finished with flanges and screw holes to form the implant plate.</div>
           <div class="workflow-step__tag">Meshmixer® · Mirror + Boolean</div>
         </div>
         <div class="workflow-step__node"><div class="workflow-step__num">3</div></div>
@@ -95,22 +95,67 @@
   </div>
 </section>
 
-<!-- DETAILED FEATURE ROWS -->
-<section class="section" aria-label="Stage detail">
+<!-- DETAILED FEATURE ROWS: MIRROR METHOD (MESHMIXER) -->
+<section class="section" aria-label="Mirror Method detail">
   <div class="container">
     <div class="section-header reveal">
       <span class="tag">🔬 Closer Look</span>
-      <h2>Inside the Two Software Stages</h2>
+      <h2>Cranial Plate Design — Mirror Method (Meshmixer)</h2>
+      <p style="color:var(--slate)">Our full 13-step Meshmixer workflow, from raw skull import to a print-ready, flanged, screw-holed implant.</p>
     </div>
 
     <div class="feature-row reveal">
       <div class="feature-row__img">
-        <img src="images/C0.png" alt="Defect boundary selected on the skull mesh in Meshmixer">
+        <img src="images/step-01-import.png" alt="Importing segmented skull STL into Meshmixer">
       </div>
       <div class="feature-row__content">
-        <span class="tag feature-row__tag">Step A</span>
-        <h3 class="feature-row__title">Outline the Defect</h3>
-        <p class="feature-row__desc">With the "Select" brush and Symmetry enabled, the defect boundary is traced once — Meshmixer mirrors it automatically onto the intact side of the skull, giving an anatomically accurate target shape in seconds.</p>
+        <span class="tag feature-row__tag">Step 1</span>
+        <h3 class="feature-row__title">Import STL</h3>
+        <p class="feature-row__desc">File → Import → load the segmented skull STL into Meshmixer.</p>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row--reverse reveal">
+      <div class="feature-row__img">
+        <img src="images/step-02-inspector.png" alt="Inspector tool repairing holes and non-manifold edges on the skull mesh">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step 2</span>
+        <h3 class="feature-row__title">Analysis → Inspector (Repair Skull)</h3>
+        <p class="feature-row__desc">Open the Inspector tool from the Analysis panel. It automatically detects and repairs holes, non-manifold edges, and flipped normals — the skull mesh ends up clean and watertight.</p>
+      </div>
+    </div>
+
+    <div class="feature-row reveal">
+      <div class="feature-row__img">
+        <img src="images/step-03-duplicate-hide.png" alt="Duplicated skull with original hidden">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step 3</span>
+        <h3 class="feature-row__title">Duplicate Skull &amp; Hide Original</h3>
+        <p class="feature-row__desc">Use Edit → Duplicate to create a copy of the skull. Hide the original skull and work only on the duplicate.</p>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row--reverse reveal">
+      <div class="feature-row__img">
+        <img src="images/step-04-symmetry.png" alt="Symmetry enabled on the duplicate skull showing sagittal midline">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step 4</span>
+        <h3 class="feature-row__title">Enable Symmetry on Duplicate Skull</h3>
+        <p class="feature-row__desc">Select the duplicate skull and turn on the Symmetry option. This sets the sagittal midline plane, required for mirroring later.</p>
+      </div>
+    </div>
+
+    <div class="feature-row reveal">
+      <div class="feature-row__img">
+        <img src="images/step-05-select-boundary.png" alt="Sphere brush selecting the defect boundary on the skull with symmetry on">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step 5</span>
+        <h3 class="feature-row__title">Select Defect Boundary &amp; Separate</h3>
+        <p class="feature-row__desc">Sketch along the edge of the broken/defect area with the Sphere Brush to define the boundary, select the patch, then Edit → Separate. This turns the defect area into its own separate object.</p>
         <div class="progress-item">
           <div class="progress-label"><span>Boundary Accuracy</span><span>98%</span></div>
           <div class="progress-bar"><div class="progress-bar__fill" style="width:98%"></div></div>
@@ -120,12 +165,34 @@
 
     <div class="feature-row feature-row--reverse reveal">
       <div class="feature-row__img">
-        <img src="images/C3.png" alt="Mirrored surface thickened into a cranial plate">
+        <img src="images/step-06-mirror-select.png" alt="Mirrored region highlighted in orange on the healthy side of the skull">
       </div>
       <div class="feature-row__content">
-        <span class="tag feature-row__tag">Step B</span>
-        <h3 class="feature-row__title">Mirror, Thicken, Subtract</h3>
-        <p class="feature-row__desc">The mirrored patch is separated, extruded to a 3–5mm prosthesis thickness, offset 1mm from the native bone to avoid a tight fit, then Boolean-subtracted to produce the final implant geometry — ready for mold generation.</p>
+        <span class="tag feature-row__tag">Step 6</span>
+        <h3 class="feature-row__title">Mirror the Separated Patch</h3>
+        <p class="feature-row__desc">Select the separated patch → Analysis (or Edit) → Mirror. Using the symmetry plane, the patch mirrors from the healthy side — giving the correct anatomical shape for the defect.</p>
+      </div>
+    </div>
+
+    <div class="feature-row reveal">
+      <div class="feature-row__img">
+        <img src="images/step-07-separate-menu.png" alt="Edit menu with Separate option highlighted">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step 7</span>
+        <h3 class="feature-row__title">Show Original Skull &amp; Align Patch</h3>
+        <p class="feature-row__desc">Make the original skull visible again. Use the Transform tool (move/rotate/scale) to align the mirrored patch onto the defect site on the original skull.</p>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row--reverse reveal">
+      <div class="feature-row__img">
+        <img src="images/step-08-sculpt-align.png" alt="Sculpt brushes fine-tuning the surface fit">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step 8</span>
+        <h3 class="feature-row__title">Fine Alignment with Sculpt Brushes</h3>
+        <p class="feature-row__desc">Use Sculpt → Brushes (Drag, ShrinkWrap, Robust Smooth) to fit the patch precisely to the curvature of the original skull, with no gaps or overlaps.</p>
         <div class="progress-item">
           <div class="progress-label"><span>Fit Tolerance</span><span>±1mm</span></div>
           <div class="progress-bar"><div class="progress-bar__fill" style="width:92%"></div></div>
@@ -135,18 +202,63 @@
 
     <div class="feature-row reveal">
       <div class="feature-row__img">
-        <img src="images/C5.png" alt="Final negative mold ready for printing">
+        <img src="images/step-09-refine.png" alt="Refine brush smoothing the patch edges">
       </div>
       <div class="feature-row__content">
-        <span class="tag feature-row__tag">Step C</span>
-        <h3 class="feature-row__title">Mold &amp; Print</h3>
-        <p class="feature-row__desc">The plate is shelled into a two-part negative mold. Each half is exported as STL, sliced in Cura at 0.2mm layers with 20–30% infill, and printed in white PLA — biocompatible enough to act as a sterile intraoperative former.</p>
+        <span class="tag feature-row__tag">Step 9</span>
+        <h3 class="feature-row__title">Smooth Edges with Refine Brush</h3>
+        <p class="feature-row__desc">Select the patch → Sculpt → Brushes → Refine. This blends the patch edges seamlessly into the surrounding skull surface.</p>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row--reverse reveal">
+      <div class="feature-row__img">
+        <img src="images/step-10-voronoi-pattern.png" alt="Voronoi lattice pattern applied to the cranial plate">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step 10</span>
+        <h3 class="feature-row__title">Create Voronoi Pattern (Dual Edges)</h3>
+        <p class="feature-row__desc">Edit → Make Pattern (Voronoi/Lattice). A dual-edge voronoi pattern is generated on the plate — lighter weight, with openings for drainage and bone growth.</p>
+      </div>
+    </div>
+
+    <div class="feature-row reveal">
+      <div class="feature-row__img">
+        <img src="images/step-11-flanges.png" alt="Flanges added along the plate edges for fixation">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step 11</span>
+        <h3 class="feature-row__title">Add Flanges</h3>
+        <p class="feature-row__desc">Use the Draw brush to add flanges (small extra lips of material) along the edges of the plate, for fixation and added strength.</p>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row--reverse reveal">
+      <div class="feature-row__img">
+        <img src="images/step-12-screw-holes.png" alt="Cylinders placed on flanges for fixation screw holes">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step 12</span>
+        <h3 class="feature-row__title">Add Cylinders for Screw Holes</h3>
+        <p class="feature-row__desc">Use the Add Cylinder tool to place cylinders on the flanges, set the diameter to match screw size, align, then apply Boolean Difference to create fixation screw holes.</p>
+      </div>
+    </div>
+
+    <div class="feature-row reveal">
+      <div class="feature-row__img">
+        <img src="images/step-13-export.png" alt="Export Mesh dialog saving the final plate as STL binary">
+      </div>
+      <div class="feature-row__content">
+        <span class="tag feature-row__tag">Step 13</span>
+        <h3 class="feature-row__title">Export STL</h3>
+        <p class="feature-row__desc">Run Analysis → Inspector one more time to confirm no errors, then File → Export → STL (binary format) — ready for printing/casting.</p>
         <div class="progress-item">
-          <div class="progress-label"><span>Avg. Print Time</span><span>4–8 hrs</span></div>
-          <div class="progress-bar"><div class="progress-bar__fill" style="width:70%"></div></div>
+          <div class="progress-label"><span>Avg. Design Time</span><span>2–4 hrs</span></div>
+          <div class="progress-bar"><div class="progress-bar__fill" style="width:80%"></div></div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
