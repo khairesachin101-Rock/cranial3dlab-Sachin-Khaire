@@ -795,3 +795,7 @@ model-viewer {
   list-style: none;
   padding-left: 0;
 }
+.workflow-steps::before,
+.workflow-steps::after {
+  display: none !important;
+}
