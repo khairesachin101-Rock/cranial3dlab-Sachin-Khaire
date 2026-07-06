@@ -799,3 +799,13 @@ model-viewer {
 .workflow-steps::after {
   display: none !important;
 }
+[class*="workflow"]::before,
+[class*="workflow"]::after,
+[class*="mirror"]::before,
+[class*="mirror"]::after,
+[class*="step"]::before,
+[class*="step"]::after {
+  display: none !important;
+  background: transparent !important;
+  border: none !important;
+}
