@@ -28,69 +28,6 @@
 <body>
 <div id="nav"></div>
 
-<div class="page-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>3D Gallery</div>
-    <span class="tag" style="color:var(--accent);background:rgba(6,182,212,.15)">🧊 Interactive Models</span>
-    <h1 style="margin-top:.75rem">3D Model Gallery</h1>
-    <p>Rotate, zoom, and inspect cranial reconstructions, plates, and molds — straight in your browser.</p>
-  </div>
-</div>
-
-<section class="section section--dark" aria-label="3D viewer">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag">🖱️ Drag to Rotate · Scroll to Zoom</span>
-      <h2 style="color:#fff">Browse the Model Library</h2>
-      <p style="color:rgba(255,255,255,.6)">Each viewer accepts a .glb or .gltf model. Swap the <code style="font-family:var(--mono)">src</code> attribute on &lt;model-viewer&gt; with your exported file to populate it.</p>
-    </div>
-
-    <div class="modules-grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
-
-      <div class="mv-card viewer-wrap reveal" style="height:380px;border-radius:16px;overflow:hidden">
-        <div class="mv-card__badge">Skull Reconstruction</div>
-        <model-viewer src="" alt="Reconstructed skull model" camera-controls auto-rotate shadow-intensity="1" exposure="0.9" style="display:none"></model-viewer>
-        <div class="mv-empty">
-          <div class="icon">🧠</div>
-          <p>No .glb file loaded yet</p>
-          <small>models/skull_reconstruction.glb</small>
-        </div>
-      </div>
-
-      <div class="mv-card viewer-wrap reveal" style="height:380px;border-radius:16px;overflow:hidden">
-        <div class="mv-card__badge">Cranial Plate</div>
-        <model-viewer src="" alt="Designed cranial implant plate" camera-controls auto-rotate shadow-intensity="1" exposure="0.9" style="display:none"></model-viewer>
-        <div class="mv-empty">
-          <div class="icon">🩹</div>
-          <p>No .glb file loaded yet</p>
-          <small>models/cranial_plate.glb</small>
-        </div>
-      </div>
-
-      <div class="mv-card viewer-wrap reveal" style="height:380px;border-radius:16px;overflow:hidden">
-        <div class="mv-card__badge">Negative Mold</div>
-        <model-viewer src="" alt="Two-part negative mold" camera-controls auto-rotate shadow-intensity="1" exposure="0.9" style="display:none"></model-viewer>
-        <div class="mv-empty">
-          <div class="icon">🧊</div>
-          <p>No .glb file loaded yet</p>
-          <small>models/negative_mold.glb</small>
-        </div>
-      </div>
-
-      <div class="mv-card viewer-wrap reveal" style="height:380px;border-radius:16px;overflow:hidden">
-        <div class="mv-card__badge">Final PMMA Implant</div>
-        <model-viewer src="" alt="Final PMMA implant with screw holes" camera-controls auto-rotate shadow-intensity="1" exposure="0.9" style="display:none"></model-viewer>
-        <div class="mv-empty">
-          <div class="icon">🔘</div>
-          <p>No .glb file loaded yet</p>
-          <small>models/final_implant.glb</small>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <section class="section" aria-label="Static reference renders">
   <div class="container">
     <div class="section-header reveal">
