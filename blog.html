@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Articles on cranial plate design, low-cost 3D printing in surgery, and Meshmixer techniques.">
+  <meta name="description" content="Articles on cranial plate design and Meshmixer techniques.">
   <title>Blog — Cranial3DLab</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
@@ -16,7 +16,7 @@
     <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Blog</div>
     <span class="tag" style="color:var(--accent);background:rgba(6,182,212,.15)">✍️ Articles &amp; Notes</span>
     <h1 style="margin-top:.75rem">Blog</h1>
-    <p>Notes on the science, software, and economics of patient-specific cranioplasty.</p>
+    <p>Notes on the process, tools, and lessons learned while building Cranial3DLab.</p>
   </div>
 </div>
 
@@ -25,62 +25,47 @@
     <div class="blog-grid">
 
       <div class="blog-card reveal">
-        <div class="blog-card__img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,var(--ice),var(--ice-light))">🧠</div>
-        <div class="blog-card__body">
-          <div class="blog-card__cat">Workflow</div>
-          <div class="blog-card__title">From DICOM to Defect: A Practical Guide to 3D Slicer Segmentation</div>
-          <div class="blog-card__exc">A walkthrough of threshold-based bone segmentation, the most common point of failure for first-time learners, and how to avoid it.</div>
-          <div class="blog-card__meta"><span>Sachin B. Khaire</span><span>6 min read</span></div>
-        </div>
-      </div>
-
-      <div class="blog-card reveal">
-        <div class="blog-card__img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#FFF7ED,#FEF3C7)">💰</div>
-        <div class="blog-card__body">
-          <div class="blog-card__cat">Economics</div>
-          <div class="blog-card__title">$40 vs. $10,000: The Real Cost Gap in Cranioplasty Materials</div>
-          <div class="blog-card__exc">Comparing desktop-printed PMMA molds against titanium and PEEK implants across published cost-effectiveness literature.</div>
-          <div class="blog-card__meta"><span>Sachin B. Khaire</span><span>8 min read</span></div>
-        </div>
-      </div>
-
-      <div class="blog-card reveal">
-        <div class="blog-card__img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#F0FDF4,#DCFCE7)">🪞</div>
+        <div class="blog-card__img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,var(--ice),var(--ice-light))">🪞</div>
         <div class="blog-card__body">
           <div class="blog-card__cat">Meshmixer</div>
-          <div class="blog-card__title">The Mirror Trick: Designing Symmetric Plates From Asymmetric Defects</div>
-          <div class="blog-card__exc">Why mirroring the healthy side of the skull is the single most powerful technique in cranial plate modeling, and how to do it cleanly.</div>
-          <div class="blog-card__meta"><span>Sachin B. Khaire</span><span>5 min read</span></div>
+          <div class="blog-card__title">Why the Mirror Technique Is the Foundation of This Workflow</div>
+          <div class="blog-card__exc">
+            Most of the design process on this site comes down to one core idea: the human skull is roughly symmetric, and that symmetry can be used to reconstruct a missing region. In Meshmixer, this means enabling Symmetry, selecting the defect boundary with a brush, and letting the software generate a matching patch from the healthy side.
+          </div>
+          <div class="blog-card__exc">
+            It sounds simple, but getting a clean result takes practice — the mirrored patch rarely aligns perfectly on the first try, and real skulls are never perfectly symmetric. Most of the actual design time in this project went into aligning, sculpting, and refining that mirrored patch until it sat naturally against the surrounding bone.
+          </div>
+          <div class="blog-card__meta"><span>Sachin B. Khaire</span></div>
         </div>
       </div>
 
       <div class="blog-card reveal">
-        <div class="blog-card__img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#EFF6FF,#DBEAFE)">🧪</div>
+        <div class="blog-card__img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#F0FDF4,#DCFCE7)">🎓</div>
         <div class="blog-card__body">
-          <div class="blog-card__cat">Sterilization</div>
-          <div class="blog-card__title">Can PLA Survive an Autoclave? Sterilizing Desktop-Printed Molds</div>
-          <div class="blog-card__exc">PLA's low glass transition temperature rules out standard autoclaving — here's why STERRAD™ and barrier draping are the safer path.</div>
-          <div class="blog-card__meta"><span>Sachin B. Khaire</span><span>4 min read</span></div>
+          <div class="blog-card__cat">About This Project</div>
+          <div class="blog-card__title">Why I Built Cranial3DLab</div>
+          <div class="blog-card__exc">
+            This site started from what I learned during my internship in the Additive Manufacturing department at Orthotech India Pvt. Ltd., combined with coursework in Biomaterials & Implants during my M.Tech at IIT Guwahati. I found that a lot of the practical, step-by-step knowledge around cranial plate design in Meshmixer wasn't easy to find in one place — it was scattered across forums, papers, and trial-and-error.
+          </div>
+          <div class="blog-card__exc">
+            Cranial3DLab is my attempt to put that workflow together clearly, using only free and open-source tools like 3D Slicer and Meshmixer. It's built purely for educational and research purposes, aimed at students and enthusiasts who want to understand how patient-specific implant design actually works, hands-on.
+          </div>
+          <div class="blog-card__meta"><span>Sachin B. Khaire</span></div>
         </div>
       </div>
 
       <div class="blog-card reveal">
-        <div class="blog-card__img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#FDF2F8,#FCE7F3)">📈</div>
+        <div class="blog-card__img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#EFF6FF,#DBEAFE)">🧩</div>
         <div class="blog-card__body">
-          <div class="blog-card__cat">Outcomes</div>
-          <div class="blog-card__title">Infection Rates in PMMA Cranioplasty: What 35 Cases Tell Us</div>
-          <div class="blog-card__exc">A look at postoperative complication data from a single-center study, and how it compares to autologous and synthetic alternatives.</div>
-          <div class="blog-card__meta"><span>Sachin B. Khaire</span><span>7 min read</span></div>
-        </div>
-      </div>
-
-      <div class="blog-card reveal">
-        <div class="blog-card__img" style="display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#F5F3FF,#EDE9FE)">🖨️</div>
-        <div class="blog-card__body">
-          <div class="blog-card__cat">Hardware</div>
-          <div class="blog-card__title">Choosing a Desktop FDM Printer for Biomodel Fabrication</div>
-          <div class="blog-card__exc">Layer height, bed temperature, and reliability considerations for printers in the $300–$1500 range used in published cranioplasty studies.</div>
-          <div class="blog-card__meta"><span>Sachin B. Khaire</span><span>6 min read</span></div>
+          <div class="blog-card__cat">Design Notes</div>
+          <div class="blog-card__title">Solid vs. Lattice: Choosing a Plate Structure</div>
+          <div class="blog-card__exc">
+            Across the case studies on this site, you'll notice two different approaches: some plates use a Voronoi lattice pattern, while others use a solid continuous surface. This wasn't arbitrary — smaller defects were a good fit for lattice patterns, which reduce material and weight while keeping the design visually interesting to study.
+          </div>
+          <div class="blog-card__exc">
+            For a larger defect, a solid surface made more sense in this project, simply to keep the modeling and printing process more straightforward for a large coverage area. Both approaches are shown here mainly to demonstrate the range of what Meshmixer's pattern and surface tools can do — not as a clinical recommendation for which is "better."
+          </div>
+          <div class="blog-card__meta"><span>Sachin B. Khaire</span></div>
         </div>
       </div>
 
