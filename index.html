@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,10 +47,18 @@
     <div class="hero__visual" aria-hidden="true">
       <div class="hero__skull-wrap">
         <div class="hero__skull-bg"></div>
-        <div class="hero__stage">
-          <img src="images/c12.png" alt="3D cranial implant visualization"
-               class="hero__img hero__img--rotate">
-        </div>
+       <div class="hero__stage">
+  <model-viewer 
+    src="images/skull.glb" 
+    auto-rotate 
+    rotation-per-second="8deg"
+    camera-controls
+    disable-zoom
+    shadow-intensity="0.6"
+    exposure="1"
+    style="width:100%;height:400px;background:transparent">
+  </model-viewer>
+</div>
         <div class="hero__badge">
           <div class="hero__badge-label">Implant Type</div>
           <div class="hero__badge-value">Cranial Plate</div>
