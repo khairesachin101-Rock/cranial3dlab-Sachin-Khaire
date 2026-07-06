@@ -197,7 +197,7 @@
         </div>
 
         <!-- MODULE 3 -->
-        <div class="module-detail reveal" id="defect">
+       <div class="module-detail reveal" id="defect">
           <div class="module-detail__header">
             <div class="module-detail__num-badge">03</div>
             <div>
@@ -207,16 +207,10 @@
           </div>
           <p style="color:var(--slate);margin-bottom:1rem">Systematically analyze the cranial defect to understand its boundaries, orientation, and relationship to adjacent anatomical structures.</p>
           <ol class="step-list">
-            <li>Import the skull STL into Meshmixer: <strong>File → Open</strong></li>
-            <li>Go to <strong>Analysis → Inspector</strong> — click "Auto Repair All" to fix mesh errors</li>
-            <li>Use <strong>Measure</strong> tool (Analysis menu) to record defect dimensions in cm</li>
-            <li>In <strong>View</strong>, enable "Show Boundaries" to visualize defect edges (highlighted pink)</li>
-            <li>Use the <strong>Select</strong> tool with Lasso to manually mark the defect region</li>
-            <li>Check for irregularities at the defect margin using Smooth Brush (Shift+B)</li>
-            <li>Document: anteroposterior distance, mediolateral distance, maximum depth</li>
-            <li>Identify which skull regions are involved: frontal, temporal, parietal, occipital</li>
+            <li>Import the skull STL into Meshmixer: <strong>File → Import</strong></li>
+            <li>Go to <strong>Analysis → Inspector</strong> — click "Auto Repair All" to fix mesh errors (holes, non-manifold edges)</li>
+            <li>Use <strong>Analysis → Measure</strong> to click two points and record approximate defect dimensions (width, length) directly on the mesh</li>
           </ol>
-          <div class="tip-box"><strong>💡 Tip:</strong> Average FTP (fronto-temporal-parietal) defect post-hemicraniectomy: ~12.8 cm × 11.4 cm. Document this before designing — it defines your implant's outer boundary.</div>
         </div>
 
         <!-- MODULE 4 -->
