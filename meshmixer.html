@@ -214,7 +214,7 @@
         </div>
 
         <!-- MODULE 4 -->
-        <div class="module-detail reveal" id="mirror">
+       <div class="module-detail reveal" id="mirror">
           <div class="module-detail__header">
             <div class="module-detail__num-badge">04</div>
             <div>
@@ -224,18 +224,17 @@
           </div>
           <p style="color:var(--slate);margin-bottom:1rem">Leverage natural bilateral skull symmetry to reconstruct missing anatomy by mirroring the healthy contralateral hemisphere.</p>
           <ol class="step-list">
-            <li>With skull open in Meshmixer, switch to <strong>Select</strong> tool</li>
-            <li>Enable <strong>Symmetry</strong> checkbox in the Select options panel</li>
-            <li>Use Lasso or Brush to select the outer boundary of the skull defect</li>
-            <li>With Symmetry ON, the mirror selection automatically appears on the opposite side</li>
-            <li>Disable Symmetry for the defect side; keep only the healthy mirror selection active</li>
-            <li>Click <strong>Edit → Separate</strong> to isolate the mirrored healthy tissue as a new object</li>
-            <li>With the separated piece selected: <strong>Edit → Mirror</strong> → choose sagittal axis (X)</li>
-            <li>Align the mirrored piece to the defect using <strong>Transform</strong> tool if needed</li>
+            <li>Duplicate the skull (<strong>Edit → Duplicate</strong>) and hide the original — work only on the duplicate for this step</li>
+            <li>Select the duplicate skull → enable <strong>Symmetry</strong> in the Select tool options panel. This sets the sagittal midline plane</li>
+            <li>Use the <strong>Sphere Brush</strong> to sketch along the defect boundary — with Symmetry ON, the same selection also appears on the healthy opposite side</li>
+            <li>Turn off Symmetry, then select only the healthy mirrored region (the opposite-side selection)</li>
+            <li>Click <strong>Edit → Separate</strong> to isolate that healthy patch as its own object</li>
+            <li>With the separated patch selected: <strong>Analysis → Mirror</strong> (or <strong>Edit → Mirror</strong>) — choose the sagittal axis to flip it across the midline, producing a piece shaped for the defect side</li>
+            <li>Make the original skull visible again, and use <strong>Transform</strong> (move/rotate) to align the mirrored patch onto the actual defect site</li>
+            <li>Visually inspect the fit — the patch's edges should closely follow the surrounding bone curvature. Minor gaps will be corrected with Sculpt tools in the next module</li>
           </ol>
-          <div class="tip-box"><strong>💡 Tip:</strong> Perfect symmetry is rare in clinical patients. After mirroring, check the plate's fit by overlaying it on the skull and visually inspecting the transition zones. Minor manual sculpting (Sculpt tools) may be needed at the margins.</div>
+          <div class="tip-box"><strong>💡 Tip:</strong> Perfect anatomical symmetry is rare in real patients. After aligning the mirrored patch, always rotate the view and check the margins from multiple angles before moving on — small transition gaps are normal at this stage and get refined in the surface-smoothing module.</div>
         </div>
-
         <!-- MODULE 5 -->
         <div class="module-detail reveal" id="surface">
           <div class="module-detail__header">
@@ -321,7 +320,7 @@
         </div>
 
         <!-- MODULE 9 -->
-        <div class="module-detail reveal" id="export">
+       <div class="module-detail reveal" id="export">
           <div class="module-detail__header">
             <div class="module-detail__num-badge">09</div>
             <div>
@@ -330,55 +329,43 @@
             </div>
           </div>
           <ol class="step-list">
-            <li>In Meshmixer: <strong>File → Export → STL Binary</strong> (smaller file size)</li>
-            <li>Open Cura → Add Printer (Creality CR-5 Pro or your FDM printer model)</li>
-            <li>Import STL → orient flat face down on build plate</li>
-            <li>Settings: Layer Height: 0.2 mm | Infill: 30% (Gyroid) | Walls: 3 | Speed: 60 mm/s</li>
-            <li>Enable supports: Tree supports, 45° overhang threshold</li>
-            <li>Material: PLA, 210°C nozzle, 60°C bed</li>
-            <li>Estimated print time: 4–8 h for a full FTP plate mold</li>
-            <li>Slice and preview each layer for artifacts before sending to printer</li>
+            <li>In Meshmixer: <strong>File → Export → STL</strong> (Binary format keeps file size smaller)</li>
+            <li>Open your slicing software (e.g., Cura, PrusaSlicer, or similar) and import the exported STL</li>
+            <li>Orient the model on the build plate for minimal overhangs and better surface finish</li>
+            <li>Set standard FDM print parameters — typical starting points: Layer Height ~0.2 mm, Infill 15–30%, Wall Count 2–3 (adjust based on your printer and material)</li>
+            <li>Enable supports if the model has steep overhangs (most slicers auto-detect these)</li>
+            <li>Choose a suitable material (commonly PLA for prototypes/educational models) and set nozzle/bed temperature per the filament manufacturer's recommendation</li>
+            <li>Preview the sliced layers in your software to catch any visible errors before printing</li>
+            <li>Print time will vary significantly based on plate size, infill, and printer speed — check your slicer's built-in time estimate rather than relying on a fixed number</li>
           </ol>
-          <div class="code-block">
-# Recommended Cura settings for cranial molds:
-Layer Height:    0.20 mm
-Wall Count:      3
-Top/Bottom:      4 layers
-Infill:          30% Gyroid
-Print Speed:     60 mm/s
-Nozzle Temp:     210°C  (PLA)
-Bed Temp:        60°C
-Supports:        Tree | 45°
-          </div>
+          <div class="tip-box"><strong>💡 Note:</strong> These are general FDM 3D printing guidelines for producing a physical model for research/educational purposes. They are not clinical-grade manufacturing specifications — actual surgical implants or molds intended for patient use require validated, regulated manufacturing processes and material certifications.</div>
         </div>
 
         <!-- MODULE 10 -->
-        <div class="module-detail reveal" id="validate">
+       <div class="module-detail reveal" id="validate">
           <div class="module-detail__header">
             <div class="module-detail__num-badge">10</div>
             <div>
               <div class="module-detail__title">Final Validation</div>
-              <div class="module-card__sub">Mesh Integrity · Fit Check · Clinical Sign-off</div>
+              <div class="module-card__sub">Mesh Integrity · Fit Check · Design Iteration</div>
             </div>
           </div>
           <ol class="step-list">
-            <li>Run <strong>Analysis → Inspector</strong> on all final STL files — zero errors required</li>
-            <li>Use <strong>Analysis → Thickness</strong> map — confirm minimum 3 mm wall thickness everywhere</li>
-            <li>Check <strong>Overhangs</strong> in Cura preview — add supports if angles exceed 45°</li>
-            <li>Print a physical model of the skull defect (same STL, same scale) for fit testing</li>
-            <li>After printing the mold, cast a test PMMA piece and physically verify fit on the skull model</li>
-            <li>Obtain neurosurgeon sign-off on fit, symmetry, and fixation hole positions</li>
-            <li>Document: implant dimensions (cm), weight (g), material, print date, sterilization date</li>
-            <li>Archive: all STL files, Meshmixer project, Cura file, surgical photos in patient record</li>
+            <li>Run <strong>Analysis → Inspector</strong> on the final plate STL — confirm zero holes and zero non-manifold edges before printing</li>
+            <li>Export and print both the defect skull model and the designed plate at the same scale — this lets you physically test the fit rather than relying on the on-screen view alone</li>
+            <li>Place the printed plate onto the printed skull defect and check the fit properly — look for gaps, overlaps, or areas where the plate doesn't sit flush against the bone margin</li>
+            <li>If the fit isn't right, go back into Meshmixer and adjust the plate geometry (re-align, re-sculpt, or re-trim the margins as needed)</li>
+            <li>Re-export and reprint the updated plate, then test the fit again — repeat this check-and-adjust cycle until the plate sits correctly on the skull model</li>
+            <li>Check the hole placement on the printed plate — verify that fixation holes line up correctly with the intended screw positions and don't fall too close to the plate edge</li>
+            <li>Once the fit and hole placement are confirmed on the physical print, save this as your final validated design</li>
+            <li>Archive your files: Meshmixer project (.mix), final STL, and notes on any changes made during testing — useful for future reference or revisions</li>
           </ol>
-          <div class="tip-box"><strong>✅ Completed!</strong> Your cranial plate design is validated and ready for sterilization and clinical use. See the <a href="cases.html" style="color:var(--sky)">Case Studies</a> for real-world examples.</div>
+          <div class="tip-box"><strong>✅ Completed!</strong> This concludes the design workflow for a patient-specific-style cranial plate model. This project is intended for educational and research demonstration purposes — real clinical implants require professional medical oversight, regulatory approval, and certified manufacturing processes. See the <a href="cases.html" style="color:var(--sky)">Case Studies</a> for examples of this workflow applied to sample models.</div>
         </div>
-
       </div><!-- end content column -->
     </div><!-- end learn-layout -->
   </div>
 </section>
-
 <div id="footer"></div>
 <script src="js/components.js"></script>
 <script src="js/main.js"></script>
