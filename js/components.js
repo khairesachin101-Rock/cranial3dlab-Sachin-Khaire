@@ -49,7 +49,7 @@ function injectFooter() {
       <div class="footer__grid">
         <div>
           <div class="footer__brand-name">🧠 Cranial<span style="color:var(--accent)">3D</span>Lab</div>
-          <p class="footer__brand-desc">An open educational platform for patient-specific cranial implant design using free and open-source tools. Created for biomedical engineers, neurosurgeons, and medical technologists worldwide.</p>
+          <p class="footer__brand-desc">An open educational Platform for learning patient-specific cranial implant design using free, open-source tools like 3D Slicer and Meshmixer. Built for students, researchers, and biomedical enthusiasts who want to understand the workflow hands-on.</p>
         </div>
         <div>
           <div class="footer__heading">Platform</div>
