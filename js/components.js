@@ -83,7 +83,7 @@ function injectFooter() {
         <span class="footer__copy">© 2025 Cranial3DLab · Sachin Balu Khaire · IIT Guwahati</span>
         <div class="footer__socials">
           <a href="https://www.linkedin.com/in/skhaire2812" target="_blank" class="footer__social" aria-label="LinkedIn" rel="noopener">in</a>
-          <a href="mailto:sachinkhaire1451@gmail.com" class="footer__social" aria-label="Email">✉</a>
+          <a href="mailto:khairesachin101@gmail.com" class="footer__social" aria-label="Email">✉</a>
           <a href="https://github.com" target="_blank" class="footer__social" aria-label="GitHub" rel="noopener">⌥</a>
         </div>
       </div>
